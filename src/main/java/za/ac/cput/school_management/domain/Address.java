@@ -35,7 +35,7 @@ public class Address {
         return postalCode;
     }
 
-    public City getCity() {
+    public City getCity(){
         return city;
     }
 
