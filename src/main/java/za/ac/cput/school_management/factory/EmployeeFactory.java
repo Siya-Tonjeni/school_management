@@ -12,6 +12,15 @@ import za.ac.cput.school_management.util.helper;
 public class EmployeeFactory {
     public static Employee build( String email, Name name){
 
+        if(email.equals("")){
+            throw new IllegalArgumentException("Email is empty.");
+        }
+        else if(!helper.emailIsValid(email)){
+            throw new IllegalArgumentException("Email is not valid");
+        }
+
+
+
         String staffId = helper.generateUUID();
         return new Employee.Builder()
                 .setStaffId(staffId)

@@ -7,13 +7,20 @@
 
 package za.ac.cput.school_management.factory;
 import za.ac.cput.school_management.domain.Name;
+import za.ac.cput.school_management.util.helper;
 
 public class NameFactory {
 
-    public static Name buildName(String firstName, String middleName, String lastName){
+    public static Name build(String firstName, String middleName, String lastName){
+
+        helper.checkNameAndSurname(firstName, lastName);
+
         return new Name.Builder().setFirstName(firstName)
                 .setMiddleName(middleName)
                 .setLastName(lastName)
                 .build();
     }
+
+
+
 }
