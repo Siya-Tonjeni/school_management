@@ -19,6 +19,26 @@ public class Address {
         return unitNumber;
     }
 
+    public String getComplexName() {
+        return complexName;
+    }
+
+    public String getStreetNumber() {
+        return streetNumber;
+    }
+
+    public String getStreetName() {
+        return streetName;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
 
     @Override
     public String toString() {
