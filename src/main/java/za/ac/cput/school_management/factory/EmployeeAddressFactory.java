@@ -1,5 +1,6 @@
 package za.ac.cput.school_management.factory;
 
-public class EmployeeAddressFactory {
+import za.ac.cput.school_management.domain.EmployeeAddress;
 
+public class EmployeeAddressFactory {
 }
