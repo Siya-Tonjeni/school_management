@@ -70,6 +70,7 @@ public class Employee {
             return this;
         }
 
-        public Employee build(){return new Employee(this);}
+        public Employee build(){
+            return new Employee(this);}
     }
 }
