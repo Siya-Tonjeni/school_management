@@ -5,6 +5,7 @@ package za.ac.cput.school_management.domain;
  * Entity class for Country
  * Author: Abongile Tshopi (214254151)
  * Date Created: 9 June 2022
+ * 
  */
 public class Country {
 
