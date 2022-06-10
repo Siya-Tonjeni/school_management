@@ -2,7 +2,7 @@
  * Address.java
  * Domain class for Address class
  * Author: Siyamtanda (217107958)
- * Date: 9 June 2022
+ * Date: 10 June 2022
  */
 package za.ac.cput.school_management.domain;
 
