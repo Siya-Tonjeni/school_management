@@ -6,5 +6,20 @@
  */
 package za.ac.cput.school_management.factory;
 
+import za.ac.cput.school_management.domain.Address;
+import za.ac.cput.school_management.domain.StudentAddress;
+import za.ac.cput.school_management.util.helper;
+
 public class StudentAddressFactory {
+    public static StudentAddress build(String studentId, Address address){
+        helper.checkStringParam("studentId", studentId);
+
+        //check if address is null
+        //......
+
+        return new StudentAddress.Builder().studentId(studentId)
+                .address(address)
+                .build();
+
+    }
 }
