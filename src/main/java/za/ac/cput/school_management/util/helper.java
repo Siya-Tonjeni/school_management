@@ -1,4 +1,5 @@
 package za.ac.cput.school_management.util;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.validator.routines.EmailValidator;
 
 import java.util.UUID;
@@ -24,6 +25,20 @@ public class helper {
         EmailValidator emailValidator = EmailValidator.getInstance();
         return emailValidator.isValid(email);
 
+    }
+
+    public static boolean isEmptyOrNull(String string) {
+        return StringUtils.isEmpty(string);
+    }
+    public static String setEmptyIfNull(String string){
+        if(isEmptyOrNull(string)) return StringUtils.EMPTY;
+        return string;
+    }
+
+
+    public static void checkStringParam(String paramName, String paramValue){
+        if(isEmptyOrNull(paramValue))
+            throw new IllegalArgumentException(String.format("Invalid value for param: %s", paramName));
     }
 
 }
