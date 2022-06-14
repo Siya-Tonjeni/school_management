@@ -1,3 +1,10 @@
+/**
+ * NameRepositoryTest.java
+ * Test class for NameRepository class
+ * Author: Sonwabile Gxoyiya (219267189)
+ * Date: 9 June 2022
+ */
+
 package za.ac.cput.school_management.repository;
 
 import org.junit.jupiter.api.Test;
@@ -9,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class NameRepositoryTest {
 
+    /*
     public static NameRepository repository = NameRepository.getRepository();
     public static Name name = NameFactory.build("Sonwabile","OK","Gxoyiya");
     public static Name name1 = NameFactory.build("Siyabulela","","Gxoyiya");
@@ -48,4 +56,6 @@ class NameRepositoryTest {
     @Test
     void getAll() {
     }
+
+     */
 }
