@@ -100,7 +100,7 @@ public class Address {
             return this;
         }
 
-        private Builder copy (Address address){
+        public Builder copy (Address address){
             this.unitNumber = address.unitNumber;
             this.complexName = address.complexName;
             this.streetNumber = address.streetNumber;
