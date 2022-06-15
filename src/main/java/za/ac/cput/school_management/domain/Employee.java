@@ -6,6 +6,8 @@
  */
 package za.ac.cput.school_management.domain;
 
+import java.util.Objects;
+
 public class Employee {
 
     private String staffId;
@@ -71,5 +73,18 @@ public class Employee {
         }
 
         public Employee build(){return new Employee(this);}
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return staffId.equals(employee.staffId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(staffId);
     }
 }

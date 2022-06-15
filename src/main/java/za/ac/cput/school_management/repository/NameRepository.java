@@ -31,7 +31,9 @@ public class NameRepository implements INameRepository{
 
     @Override
     public Name save(Name name){
-        Name readName = (read(name.getFistName()));
+
+        Name.NameId nameId = new Name.NameId(name.getFistName(), name.getLastName());
+        Name readName = (read(nameId));
         if (readName != null){
             nameDB.remove(readName);
             nameDB.add(name);
@@ -40,11 +42,10 @@ public class NameRepository implements INameRepository{
         return name;
     }
     @Override
-    public Name read(String name) {
-        Name readName = nameDB.stream().filter(n -> n.getFistName()
-                .equals(name))
-                //.filter(n -> n.getLastName().equals(surname))
-                .findAny()
+    public Name read(Name.NameId nameId) {
+        Name readName = nameDB.stream().filter(n -> n.getFistName().equals(nameId.getFistName()))
+                .filter(n -> n.getLastName().equals(nameId.getLastName()))
+                .findFirst()
                 .orElse(null);
         return readName;
 
@@ -62,7 +63,9 @@ public class NameRepository implements INameRepository{
 
     @Override
     public Name delete(Name name) {
-        Name deleteName = read(name.getFistName());
+        Name.NameId nameId = new Name.NameId(name.getFistName(), name.getLastName());
+        Name deleteName = (read(nameId));
+        //Name deleteName = read(name.getFistName());
         if(deleteName != null){
             nameDB.remove(deleteName);
         }

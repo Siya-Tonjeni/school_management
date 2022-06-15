@@ -27,7 +27,7 @@ class NameRepositoryTest {
         Name createdName = repository.save(name);
         Name createdName1 = repository.save(name1);
         Name createdName2 = repository.save(name2);
-        Name readName = repository.read("Sonwabile");
+        Name readName = repository.read(new Name.NameId(createdName2.getFistName(),createdName2.getLastName()));
         assertNotNull(readName);
         System.out.println("In Repository: " + repository.getAll());
         System.out.println("Read value: " + readName);
