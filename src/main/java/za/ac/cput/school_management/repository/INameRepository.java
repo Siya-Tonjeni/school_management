@@ -7,5 +7,5 @@ public interface INameRepository extends IRepository<Name, String>{
 
     public List<Name> getAll();
 
-    //public Name read(String string, String string1);
+
 }

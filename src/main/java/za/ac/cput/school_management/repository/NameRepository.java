@@ -23,12 +23,22 @@ public class NameRepository implements INameRepository{
         return repository;
     }
 
+//    @Override
+//    public Name create(Name name) {
+//        nameDB.add(name);
+//        return name;
+//    }
+
     @Override
-    public Name create(Name name) {
-        nameDB.add(name);
+    public Name save(Name name){
+        Name readName = (read(name.getFistName()));
+        if (readName != null){
+            nameDB.remove(readName);
+            nameDB.add(name);
+        }
+        this.nameDB.add(name);
         return name;
     }
-
     @Override
     public Name read(String name) {
         Name readName = nameDB.stream().filter(n -> n.getFistName()
@@ -40,15 +50,15 @@ public class NameRepository implements INameRepository{
 
     }
 
-    public Name update(Name name){
-        Name oldName = read(name.getFistName());
-        if(oldName != null){
-            nameDB.remove(oldName);
-            nameDB.add(name);
-
-        }
-        return null;
-    }
+//    public Name update(Name name){
+//        Name oldName = read(name.getFistName());
+//        if(oldName != null){
+//            nameDB.remove(oldName);
+//            nameDB.add(name);
+//
+//        }
+//        return null;
+//    }
 
     @Override
     public Name delete(Name name) {

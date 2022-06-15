@@ -16,7 +16,7 @@ class NameRepositoryTest {
 
     @Test
     void create() {
-        Name createdName = repository.create(name);
+        Name createdName = repository.save(name);
         assertNotNull(createdName);
         System.out.println(createdName.toString());
         System.out.println("In the Repository: " + repository.getAll());
@@ -24,28 +24,25 @@ class NameRepositoryTest {
 
     @Test
     void read() {
-        Name createdName = repository.create(name);
-        Name createdName1 = repository.create(name1);
-        Name createdName2 = repository.create(name2);
+        Name createdName = repository.save(name);
+        Name createdName1 = repository.save(name1);
+        Name createdName2 = repository.save(name2);
         Name readName = repository.read("Sonwabile");
         assertNotNull(readName);
         System.out.println("In Repository: " + repository.getAll());
         System.out.println("Read value: " + readName);
     }
 
-    @Test
-    void update() {
-    }
+
 
     @Test
     void delete() {
-        Name createdName = repository.create(name);
-        Name createdName1 = repository.create(name1);
+        Name createdName = repository.save(name);
+        Name createdName1 = repository.save(name1);
+        System.out.println("In repository: " + repository.getAll());
         Name deleteName = repository.delete(name1);
         System.out.println("In the Repository: " + repository.getAll());
     }
 
-    @Test
-    void getAll() {
-    }
+
 }
