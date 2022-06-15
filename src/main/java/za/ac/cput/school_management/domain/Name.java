@@ -2,7 +2,7 @@
  * Name.java
  * Entity class for Name
  * Author: Sonwabile Gxoyiya (219267189)
- * Date: 9 June 2022
+ * Date: 15 June 2022
  */
 
 package za.ac.cput.school_management.domain;

@@ -1,3 +1,9 @@
+/**
+ * IEmployeeRepository.java
+ * Interface for EmployeeRepository.java
+ * Author: Sonwabile Gxoyiya (219267189)
+ * Date: 15 June 2022
+ */
 package za.ac.cput.school_management.repository;
 
 import za.ac.cput.school_management.domain.Employee;
