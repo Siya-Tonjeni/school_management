@@ -2,10 +2,12 @@
  * Name.java
  * Entity class for Name
  * Author: Sonwabile Gxoyiya (219267189)
- * Date: 9 June 2022
+ * Date: 15 June 2022
  */
 
 package za.ac.cput.school_management.domain;
+
+import java.util.Objects;
 
 public class Name {
 
@@ -72,5 +74,48 @@ public class Name {
         public Name build(){
             return new Name(this);
         }
+    }
+
+    public static class NameId{
+        private String fistName;
+        private String lastName;
+
+        public NameId(String fistName, String lastName) {
+            this.fistName = fistName;
+            this.lastName = lastName;
+        }
+
+        public String getFistName() {
+            return fistName;
+        }
+
+        public String getLastName() {
+            return lastName;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            NameId nameId = (NameId) o;
+            return fistName.equals(nameId.fistName) && lastName.equals(nameId.lastName);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(fistName, lastName);
+        }
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Name name = (Name) o;
+        return fistName.equals(name.fistName) && middleName.equals(name.middleName) && lastName.equals(name.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fistName, middleName, lastName);
     }
 }

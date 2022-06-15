@@ -1,10 +1,9 @@
 /**
  * NameRepositoryTest.java
- * Test class for NameRepository class
+ * Test class for NameRepository.java
  * Author: Sonwabile Gxoyiya (219267189)
- * Date: 9 June 2022
+ * Date: 15 June 2022
  */
-
 package za.ac.cput.school_management.repository;
 
 import org.junit.jupiter.api.Test;
@@ -16,7 +15,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class NameRepositoryTest {
 
-    /*
     public static NameRepository repository = NameRepository.getRepository();
     public static Name name = NameFactory.build("Sonwabile","OK","Gxoyiya");
     public static Name name1 = NameFactory.build("Siyabulela","","Gxoyiya");
@@ -24,7 +22,7 @@ class NameRepositoryTest {
 
     @Test
     void create() {
-        Name createdName = repository.create(name);
+        Name createdName = repository.save(name);
         assertNotNull(createdName);
         System.out.println(createdName.toString());
         System.out.println("In the Repository: " + repository.getAll());
@@ -32,30 +30,25 @@ class NameRepositoryTest {
 
     @Test
     void read() {
-        Name createdName = repository.create(name);
-        Name createdName1 = repository.create(name1);
-        Name createdName2 = repository.create(name2);
-        Name readName = repository.read("Sonwabile");
+        Name createdName = repository.save(name);
+        Name createdName1 = repository.save(name1);
+        Name createdName2 = repository.save(name2);
+        Name readName = repository.read(new Name.NameId(createdName2.getFistName(),createdName2.getLastName()));
         assertNotNull(readName);
         System.out.println("In Repository: " + repository.getAll());
         System.out.println("Read value: " + readName);
     }
 
-    @Test
-    void update() {
-    }
+
 
     @Test
     void delete() {
-        Name createdName = repository.create(name);
-        Name createdName1 = repository.create(name1);
+        Name createdName = repository.save(name);
+        Name createdName1 = repository.save(name1);
+        System.out.println("In repository: " + repository.getAll());
         Name deleteName = repository.delete(name1);
         System.out.println("In the Repository: " + repository.getAll());
     }
 
-    @Test
-    void getAll() {
-    }
 
-     */
 }
