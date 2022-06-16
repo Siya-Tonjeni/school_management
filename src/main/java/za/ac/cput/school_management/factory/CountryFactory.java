@@ -14,9 +14,6 @@ public class CountryFactory {
 
         String id = helper.generateUUID();
 
-        if(name.equals(""))
-            throw new IllegalArgumentException("County name is empty.");
-
         return new Country.Builder()
                 .setId(id)
                 .setName(name)
