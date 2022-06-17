@@ -12,8 +12,11 @@ import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.Employee;
 import za.ac.cput.school_management.domain.Name;
 //import za.ac.cput.school_management.repository.EmployeeRepository;
+import za.ac.cput.school_management.factory.EmployeeFactory;
+import za.ac.cput.school_management.factory.NameFactory;
 import za.ac.cput.school_management.repository.IEmployeeRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -52,4 +55,31 @@ public class EmployeeService implements IEmployeeService{
     public List<Employee> getAll() {
         return this.repository.findAll();
     }
+
+    //get employeename given email
+    public List<Employee> getEmployeeNameByEmail(String givenEmail){
+        List<Employee> result = new ArrayList<>();
+        List<Employee> employee = getAll();
+        for(Employee e: employee){
+            if(e.getEmail().equals(givenEmail)){
+                result.add(e);
+
+                //result = result.getName();
+            }
+        }
+        return result;
+
+
+
+    }
+
+//    public String getNameById(String givenEmail){
+//        String result = null;
+//        List<Employee> employee = getAll();
+//        for(Employee e: employee){
+//            if(e.getEmail().equals(givenEmail)){
+//                //result
+//            }
+//        }
+//    }
 }
