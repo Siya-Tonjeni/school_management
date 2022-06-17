@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.Optional;
 
 public class CountryRepository implements ICountryRepository{
-    public static CountryRepository repository = null;
+    private static CountryRepository repository = null;
     private List<Country> countryDB = null;
 
     private CountryRepository(){
@@ -14,9 +14,8 @@ public class CountryRepository implements ICountryRepository{
             }
 
     public static CountryRepository getRepository() {
-        if (repository == null) {
+        if (repository == null)
             repository = new CountryRepository();
-        }
         return repository;
     }
 
@@ -30,48 +29,19 @@ public class CountryRepository implements ICountryRepository{
         return country;
     }
 
-    //@Override
-    public Country create(Country country) {
-        this.countryDB.add(country);
-        return country;
-    }
-
-
-    //@Override
+    @Override
     public Optional<Country> read(String id) {
-        for (Country ctr : countryDB){
-            if (ctr.getId().equals(id)){
-                return Optional.of(ctr);
-            }
-        }
-        return null;
+        return this.countryDB.stream()
+                .filter(s->s.getId().equalsIgnoreCase(id))
+                .findFirst();
     }
 
-    //@Override
+    @Override
     public void delete(Country country) {
-
+    this.countryDB.remove(country);
     }
 
-   // @Override
-    public Country update(Country country) {
-        Optional<Country> ctr1 = read(country.getId());
-        if (ctr1 != null){
-            countryDB.remove(ctr1);
-            countryDB.add(country);
-            return country;
-        }
-        return null;
-    }
-
-    //@Override
-    public void delete(String id) {
-        Optional<Country> deleteCountry = read((id));
-        if (deleteCountry == null)
-            System.out.println("Country is null");
-            countryDB.remove(deleteCountry);
-    }
-
-    //@Override
+    @Override
     public List<Country> getAll() {
         return countryDB;
     }
