@@ -10,6 +10,7 @@ import za.ac.cput.school_management.domain.StudentAddress;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class StudentAddressRepository implements IStudentAddressRepository {
 
@@ -30,33 +31,25 @@ public class StudentAddressRepository implements IStudentAddressRepository {
 
     @Override
     public StudentAddress save(StudentAddress studentAddress) {
-        StudentAddress saveStudentAddress = read(studentAddress.getStudentId());
-        if (saveStudentAddress != null) {
-            studentAddressDB.remove(saveStudentAddress);
-            studentAddressDB.add(studentAddress);
-        } else {
-            studentAddressDB.add(studentAddress);
-            return studentAddress;
+        Optional<StudentAddress> read = read(studentAddress.getStudentId());
+        if(read.isPresent()){
+            delete(read.get());
         }
-        return null;
-
-    }
-
-
-    @Override
-    public StudentAddress read(String studentId) {
-        StudentAddress studentAddress = this.studentAddressDB.stream()
-                .filter(s -> s.getStudentId().equals(studentId))
-                .findAny()
-                .orElse(null);
-
+        this.studentAddressDB.add(studentAddress);
         return studentAddress;
     }
 
+
     @Override
-    public StudentAddress delete(StudentAddress studentAddress) {
+    public Optional<StudentAddress> read(String id){
+        return this.studentAddressDB.stream()
+                .filter(s-> s.getStudentId().equalsIgnoreCase(id))
+                .findFirst();
+    }
+
+    @Override
+    public void delete(StudentAddress studentAddress){
         this.studentAddressDB.remove(studentAddress);
-        return null;
     }
 
 

@@ -10,6 +10,7 @@ import za.ac.cput.school_management.domain.City;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class CityRepository implements ICityRepository {
 
@@ -30,33 +31,27 @@ public class CityRepository implements ICityRepository {
 
     @Override
     public City save(City city) {
-        City saveCity = read(city.getId());
-        if (saveCity != null) {
-            cityDB.remove(saveCity);
-            cityDB.add(city);
-        } else{
-            cityDB.add(city);
-            return city;
+        Optional<City> read = read(city.getId());
+        if(read.isPresent()){
+            delete(read.get());
         }
-        return null;
+        this.cityDB.add(city);
+        return city;
     }
 
 
     @Override
-    public City read (String id){
-        City city = this.cityDB.stream()
-                .filter(c -> c.getId().equals(id))
-                .findAny()
-                .orElse(null);
-
-        return city;
+    public Optional<City> read(String id){
+        return this.cityDB.stream()
+                .filter(c-> c.getId().equalsIgnoreCase(id))
+                .findFirst();
     }
 
    @Override
-    public City delete (City city){
-        this.cityDB.remove(city);
-        return null;
-    }
+   public void delete(City city){
+       this.cityDB.remove(city);
+   }
+
 
     @Override
     public List<City> getAll () {

@@ -10,6 +10,7 @@ import za.ac.cput.school_management.factory.CountryFactory;
 import za.ac.cput.school_management.factory.StudentAddressFactory;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -30,30 +31,34 @@ class StudentAddressRepositoryTest {
 
     }
     @Test
-    void b_read() {
-        StudentAddress read= repository.read(studentAddress.getStudentId());
-        assertNotNull(read);
-        assertEquals(read.getStudentId(),studentAddress.getStudentId());
-        System.out.println("Read: "+'\n'+ read);
+    void c_read() {
+        StudentAddress saved=repository.save(studentAddress);
+        Optional<StudentAddress> read= repository.read(saved.getStudentId());
+        assertAll(
+                ()-> assertTrue(read.isPresent()),
+                ()->assertSame(saved, read.get())
+        );
+        System.out.println("read "+'\n'+read.get());
     }
 
     @Test
-    void d_delete() {
+    void a_delete() {
 
-        List<StudentAddress> studentAddressDB = repository.getAll();
-        StudentAddress deleted= repository.delete(studentAddress);
-        assertNull(deleted);
+        StudentAddress saved = repository.save(studentAddress);
+        List<StudentAddress> studentAddressDB=repository.getAll();
+        assertEquals(1,studentAddressDB.size());
+        repository.delete(saved);
+        System.out.println("Student addresses on the list "+'\n'+studentAddressDB);
+        studentAddressDB= repository.getAll();
         assertEquals(0,studentAddressDB.size());
 
-        System.out.println("list after delete"+'\n'+studentAddressDB);
-
     }
 
 
 
     @Test
-    void c_findAll() {
-        System.out.println("Show all cities");
+    void d_findAll() {
+        System.out.println("Show all studentAddress");
         System.out.println(repository.getAll());
     }
 }

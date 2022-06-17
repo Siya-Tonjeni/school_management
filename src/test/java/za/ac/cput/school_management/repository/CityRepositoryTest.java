@@ -8,6 +8,7 @@ import za.ac.cput.school_management.factory.CityFactory;
 import za.ac.cput.school_management.factory.CountryFactory;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,7 +22,7 @@ class CityRepositoryTest {
 
 
         @Test
-        void a_save(){
+        void b_save(){
             City saved = repository.save(city);
             assertNotNull(saved);
             assertEquals(saved.getId(),city.getId());
@@ -29,27 +30,31 @@ class CityRepositoryTest {
 
         }
         @Test
-        void b_read() {
-            City read= repository.read(city.getId());
-            assertNotNull(read);
-            assertEquals(read.getId(),city.getId());
-            System.out.println("Read: "+'\n'+ read);
+        void c_read() {
+            City saved=repository.save(city);
+            Optional<City> read= repository.read(saved.getId());
+            assertAll(
+                    ()-> assertTrue(read.isPresent()),
+                    ()->assertSame(saved, read.get())
+            );
+            System.out.println("read "+'\n'+read.get());
         }
 
         @Test
-        void d_delete() {
-            List<City> cityDB = repository.getAll();
-            City deleted= repository.delete(city);
-            assertNull(deleted);
+        void a_delete() {
+            City saved = repository.save(city);
+            List<City> cityDB=repository.getAll();
+            assertEquals(1,cityDB.size());
+            repository.delete(saved);
+            System.out.println("cities on the list "+'\n'+cityDB);
+            cityDB= repository.getAll();
             assertEquals(0,cityDB.size());
-
-            System.out.println("list after delete"+'\n'+cityDB);
         }
 
 
 
         @Test
-        void c_findAll() {
+        void d_findAll() {
             System.out.println("Show all cities");
             System.out.println(repository.getAll());
         }
