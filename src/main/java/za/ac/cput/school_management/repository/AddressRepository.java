@@ -9,11 +9,12 @@ package za.ac.cput.school_management.repository;
 import za.ac.cput.school_management.domain.Address;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class AddressRepository implements IAddressRepository {
 
     private static AddressRepository repository = null;
-    private List<Address> addressList = null;
+    private List<Address> addressList;
 
     private AddressRepository(){
         addressList = new ArrayList<>();
@@ -25,40 +26,23 @@ public class AddressRepository implements IAddressRepository {
         return repository;
     }
 
-    public Address create(Address address){
-        boolean success = addressList.add(address);
-        if(success)
-            return null;
+    public Address save(Address address){
+        Optional<Address> read = read(address.getStreetName());
+        if(read.isPresent()){
+            delete(read.get());
+        }
+        this.addressList.add(address);
         return address;
     }
 
-    public Address read(String streetName){
-        Address address = null;
-        for(Address address1: addressList){
-            if(address1.getStreetName().equalsIgnoreCase(streetName)){
-                address = address1;
-                break;
-            }
-        }
-        return address;
-    }
-
-    public Address update(Address address){
-        Address address1 = read(address.getStreetNumber());
-        if(address1!= null){
-            addressList.remove(address1);
-            addressList.add(address1);
-        }
-        return address1;
+    public Optional<Address> read(String streetName){
+        return this.addressList.stream().filter(g -> g.getStreetName()
+                .equalsIgnoreCase(streetName)).findFirst();
     }
 
     @Override
-    public Address delete(Address address) {
-        Address address1 = read((address.getPostalCode()));
-        if(address1 != null){
-            addressList.remove((address));
-        }
-        return null;
+    public void delete(Address address) {
+        this.addressList.remove(address);
     }
 
     @Override
