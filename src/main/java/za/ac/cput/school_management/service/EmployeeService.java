@@ -7,26 +7,31 @@
 
 package za.ac.cput.school_management.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.Employee;
 import za.ac.cput.school_management.domain.Name;
-import za.ac.cput.school_management.repository.EmployeeRepository;
+//import za.ac.cput.school_management.repository.EmployeeRepository;
+import za.ac.cput.school_management.repository.IEmployeeRepository;
 
 import java.util.List;
+import java.util.Optional;
 
+@Service
 public class EmployeeService implements IEmployeeService{
 
 
-    private EmployeeRepository repository;
-    private static EmployeeService service;
+    private IEmployeeRepository repository;
+    //private static EmployeeService service;
 
-    private EmployeeService(){this.repository = EmployeeRepository.getRepository();}
+    @Autowired private EmployeeService(IEmployeeRepository repository){this.repository = repository;}
 
-    public static EmployeeService getService(){
-        if(service == null){
-            service = new EmployeeService();
-        }
-        return service;
-    }
+//    public static EmployeeService getService(){
+//        if(service == null){
+//            service = new EmployeeService();
+//        }
+//        return service;
+//    }
 
     @Override
     public Employee save(Employee employee) {
@@ -34,17 +39,17 @@ public class EmployeeService implements IEmployeeService{
     }
 
     @Override
-    public Employee read(String s) {
-        return this.repository.read(s);
+    public Optional<Employee> read(String s) {
+        return this.repository.findById(s);
     }
 
     @Override
-    public Employee delete(Employee employee) {
-        return this.repository.delete(employee);
+    public void delete(Employee employee) {
+         this.repository.delete(employee);
     }
 
     @Override
     public List<Employee> getAll() {
-        return this.repository.getAll();
+        return this.repository.findAll();
     }
 }

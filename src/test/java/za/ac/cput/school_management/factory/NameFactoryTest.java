@@ -19,7 +19,7 @@ class NameFactoryTest {
     @Test
     @DisplayName("Testing create the Name Value object")
     public void testCreate(){
-        Name name = NameFactory.build("kkjh","", "Kjjh");
+        Name name = NameFactory.build("Sonwabile","", "Gxyiya");
         assertNotNull(name);
         System.out.println(name.toString());
 

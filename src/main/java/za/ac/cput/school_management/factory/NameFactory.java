@@ -21,6 +21,8 @@ public class NameFactory {
                 .build();
     }
 
-
+//    public static Name.NameId build(Name name){
+//        return new Name.NameId(name.getFistName(), name.getLastName());
+//    }
 
 }
