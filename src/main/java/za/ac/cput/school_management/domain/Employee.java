@@ -5,16 +5,24 @@
  * Date: 9 June 2022
  */
 package za.ac.cput.school_management.domain;
+import za.ac.cput.school_management.domain.Name;
 
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
-
+@Entity
 public class Employee {
 
-    private String staffId;
-    private String email;
+    @NotNull @Id private String staffId;
+    @NotNull private String email;
+    @NotNull  @Embedded
     private Name name;
 
     //getters
+    protected Employee(){}
 
     public String getStaffId(){
         return staffId;

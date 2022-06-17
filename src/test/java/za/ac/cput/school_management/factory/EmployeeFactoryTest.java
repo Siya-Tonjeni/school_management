@@ -43,14 +43,14 @@ class EmployeeFactoryTest {
 
     @Test
     @DisplayName("Test Employee Object Equality")
-    public void testIsNotEqual(){
+    public void testIsEqual(){
 
         Employee emp1 = EmployeeFactory.build("email@gmail.com",
                 NameFactory.build("Thando","Ace","Soma"));
 
         Employee emp2 = new Employee.Builder().copy(emp1).build();
 
-        assertNotEquals(emp1, emp2);
+        assertEquals(emp1, emp2);
 
         System.out.println(emp1);
         System.out.println(emp2);
