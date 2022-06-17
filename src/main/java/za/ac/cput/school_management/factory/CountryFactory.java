@@ -10,9 +10,9 @@ import za.ac.cput.school_management.domain.Country;
 import za.ac.cput.school_management.util.helper;
 
 public class CountryFactory {
-    public static Country build( String name){
+    public static Country build( String id, String name){
 
-        String id = helper.generateUUID();
+//        String id = helper.generateUUID();
 
         return new Country.Builder()
                 .setId(id)

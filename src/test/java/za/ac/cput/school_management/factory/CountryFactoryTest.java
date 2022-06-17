@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 import za.ac.cput.school_management.domain.Country;
 
+import javax.swing.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CountryFactoryTest {
@@ -36,12 +38,8 @@ class CountryFactoryTest {
     @Test
     void createCountry0(){
 
-        Country country0 = CountryFactory.build("South Africa");
+        Country country0 = CountryFactory.build("SA123456789", "South Africa");
         System.out.println(country0.toString());
-
-        if(country0.equals(""))
-            throw new IllegalArgumentException("County name is empty.");
-
         assertNotNull(country0);
         System.out.println("Country created successfully");
     }
