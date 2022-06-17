@@ -11,17 +11,19 @@ import za.ac.cput.school_management.domain.Country;
 import za.ac.cput.school_management.util.helper;
 
 public class CityFactory {
-    public static City build(String id, String name, Country country){
+    public static City createCity(String id, String name, Country country){
         helper.checkStringParam("id", id);
         helper.checkStringParam("name",name);
 
-        //check if country is null
-        //....
+        //check if country is null or empty
+        if( country == null || country.getId().isEmpty() || country.getName().isEmpty())
+            throw new IllegalArgumentException("Please insert country id or name: ");
 
-        return new City.Builder().id(id)
-                .name(name)
-                .country(country)
+        City city= new City.Builder().setId(id)
+                .setName(name)
+                .setCountry(country)
                 .build();
+        return city;
 
     }
 }

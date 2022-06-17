@@ -43,15 +43,15 @@ public class City {
         private String name;
         private Country country;
 
-        public Builder id(String id){
+        public Builder setId(String id){
             this.id=id;
             return this;
         }
-        public Builder name(String name){
+        public Builder setName(String name){
             this.name=name;
             return this;
         }
-        public Builder country(Country country){
+        public Builder setCountry(Country country){
             this.country=country;
             return this;
         }
