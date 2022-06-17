@@ -1,10 +1,12 @@
 package za.ac.cput.school_management.repository;
 
+import java.util.Optional;
+
 public interface IRepository<T, ID> {
 
 
     T save(T t);
-    T read(ID id);
+    Optional<T> read(ID id);
 
-    T delete(T t);
+    void delete(T t);
 }
