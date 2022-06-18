@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+      show-sql: true
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/schoolmanagement-db?createDatabaseIfNotExist=true
+    username: root
+    password:

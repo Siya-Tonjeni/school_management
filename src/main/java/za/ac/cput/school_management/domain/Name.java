@@ -2,18 +2,34 @@
  * Name.java
  * Entity class for Name
  * Author: Sonwabile Gxoyiya (219267189)
- * Date: 9 June 2022
+ * Date: 15 June 2022
  */
 
 package za.ac.cput.school_management.domain;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
+import java.util.Objects;
+//@Entity
+//@IdClass(Name.NameId.class)
+@Embeddable
 public class Name {
 
-    private String fistName;
+    //@NotNull
+    // @Id
+    private String fistName, lastName;
+
+    //@NotNull
     private String middleName;
-    private String lastName;
+
 
     //getters
+
+    protected Name(){}
 
     public String getFistName(){
         return fistName;
@@ -35,6 +51,12 @@ public class Name {
                 ", lastName='" + lastName + '\'' +
                 '}';
     }
+
+//    public Name(String firstName, String lastName, String middleName){
+//        this.fistName = firstName;
+//        this.lastName = lastName;
+//        this.middleName = middleName;
+//    }
 
     private Name(Builder builder){
         this.fistName = builder.fistName;
@@ -72,5 +94,50 @@ public class Name {
         public Name build(){
             return new Name(this);
         }
+    }
+
+//    public static class NameId implements Serializable {
+//        @Id private String fistName;
+//        @Id private String lastName;
+//
+//        protected NameId(){}
+//
+//        public NameId(String fistName, String lastName) {
+//            this.fistName = fistName;
+//            this.lastName = lastName;
+//        }
+//
+//        public String getFistName() {
+//            return fistName;
+//        }
+//
+//        public String getLastName() {
+//            return lastName;
+//        }
+//
+//        @Override
+//        public boolean equals(Object o) {
+//            if (this == o) return true;
+//            if (o == null || getClass() != o.getClass()) return false;
+//            NameId nameId = (NameId) o;
+//            return fistName.equals(nameId.fistName) && lastName.equals(nameId.lastName);
+//        }
+//
+//        @Override
+//        public int hashCode() {
+//            return Objects.hash(fistName, lastName);
+//        }
+//    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Name name = (Name) o;
+        return fistName.equals(name.fistName) && middleName.equals(name.middleName) && lastName.equals(name.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fistName, middleName, lastName);
     }
 }
