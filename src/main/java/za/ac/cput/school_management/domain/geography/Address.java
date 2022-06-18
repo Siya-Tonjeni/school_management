@@ -4,7 +4,9 @@
  * Author: Siyamtanda (217107958)
  * Date: 10 June 2022
  */
-package za.ac.cput.school_management.domain;
+package za.ac.cput.school_management.domain.geography;
+
+import za.ac.cput.school_management.domain.City;
 
 public class Address {
 

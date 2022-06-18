@@ -4,9 +4,9 @@
  * Author: Siyamtanda Tonjeni(217107958)
  * Date: 10 June 2022
  */
-package za.ac.cput.school_management.factory;
+package za.ac.cput.school_management.factory.geography;
 
-import za.ac.cput.school_management.domain.Address;
+import za.ac.cput.school_management.domain.geography.Address;
 import za.ac.cput.school_management.domain.City;
 import za.ac.cput.school_management.util.helper;
 
@@ -19,8 +19,7 @@ public class AddressFactory {
         helper.isEmptyOrNull(streetNumber);
         helper.isEmptyOrNull(streetName);
 
-    if (postalCode.length() >= 1000 && postalCode.length() <= 9999)
-        throw new IllegalArgumentException("Postal code must be between 1000 and 9999");
+        helper.checkPostalCode(postalCode);
 
 
         return new Address.Builder()
