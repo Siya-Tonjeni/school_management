@@ -6,7 +6,7 @@
  */
 package za.ac.cput.school_management.controller;
 
-import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +18,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("school-management/City/")
-@Slf4j
+
 public class CityController {
     private final CityService cityService;
 
@@ -30,7 +30,6 @@ public class CityController {
    @GetMapping("cities/{id}")
    //get a list of cities in a country given countryId
    public ResponseEntity<List<City>> getCitiesGivenACountryId(@PathVariable String countryId){
-    log.info("List of the cities in this country: {}", countryId);
         List<City> cities=this.cityService.getCitiesGivenACountryId(countryId);
         return ResponseEntity.ok(cities);
    }
