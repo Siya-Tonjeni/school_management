@@ -7,7 +7,7 @@
 package za.ac.cput.school_management.factory;
 
 import za.ac.cput.school_management.domain.Address;
-import za.ac.cput.school_management.domain.City;
+import za.ac.cput.school_management.domain.geography.City;
 import za.ac.cput.school_management.util.helper;
 
 public class AddressFactory {
