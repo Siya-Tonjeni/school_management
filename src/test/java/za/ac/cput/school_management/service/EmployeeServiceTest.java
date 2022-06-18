@@ -28,9 +28,9 @@ class EmployeeServiceTest {
 
     @BeforeEach
     void setUp(){
-        emp = EmployeeFactory.build("name@email.co.za",NameFactory.build("Sonwabile","", "Gxoyiya"));
+        emp = EmployeeFactory.build("test-id","name@email.co.za",NameFactory.build("Sonwabile","", "Gxoyiya"));
         //Name.NameId nameId = NameFactory.build(e);
-        emp1 = EmployeeFactory.build("name1@cput.ac.za", NameFactory.build("Siyabulela", "", "Gxoyiya"));
+        emp1 = EmployeeFactory.build("test-id1","name1@cput.ac.za", NameFactory.build("Siyabulela", "", "Gxoyiya"));
         service.save(emp1);
 
     }

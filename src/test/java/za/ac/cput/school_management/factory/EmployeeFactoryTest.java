@@ -18,7 +18,7 @@ class EmployeeFactoryTest {
     @Test
     @DisplayName("Test Creating the Employee Object")
     public void testCreate(){
-        Employee emp = EmployeeFactory.build("name@email.ac.za",
+        Employee emp = EmployeeFactory.build("test-id","name@email.ac.za",
                 NameFactory.build("Sonwabile","","Gxoyiya"));
 
         assertNotNull(emp);
@@ -30,7 +30,7 @@ class EmployeeFactoryTest {
     @DisplayName("Test Employee Object Identity")
     public void testNotSame(){
 
-        Employee emp1 = EmployeeFactory.build("email@gmail.com",
+        Employee emp1 = EmployeeFactory.build("test-id","email@gmail.com",
                 NameFactory.build("Thando","Ace","Soma"));
 
         Employee emp2 = new Employee.Builder().copy(emp1).build();
@@ -45,7 +45,7 @@ class EmployeeFactoryTest {
     @DisplayName("Test Employee Object Equality")
     public void testIsEqual(){
 
-        Employee emp1 = EmployeeFactory.build("email@gmail.com",
+        Employee emp1 = EmployeeFactory.build("test-id1","email@gmail.com",
                 NameFactory.build("Thando","Ace","Soma"));
 
         Employee emp2 = new Employee.Builder().copy(emp1).build();
@@ -59,7 +59,7 @@ class EmployeeFactoryTest {
 
     @Test
     public void testEmailException(){
-        Exception exc = assertThrows(IllegalArgumentException.class, () -> EmployeeFactory.build("2322",
+        Exception exc = assertThrows(IllegalArgumentException.class, () -> EmployeeFactory.build("test-id","2322",
                 NameFactory.build("Sonwabile","","Gxoyiya")));
 
         System.out.println("IllegalArgumentException: " + exc.getMessage());
@@ -67,7 +67,7 @@ class EmployeeFactoryTest {
 
     @Test
     public void testFirstNameException(){
-        Exception exc = assertThrows(IllegalArgumentException.class, () -> EmployeeFactory.build("name@email.com",
+        Exception exc = assertThrows(IllegalArgumentException.class, () -> EmployeeFactory.build("test-id","name@email.com",
                 NameFactory.build("","","Gxoyiya")));
 
         System.out.println("IllegalArgumentException: " + exc.getMessage());
@@ -75,7 +75,7 @@ class EmployeeFactoryTest {
 
     @Test
     public void testLastNameException(){
-        Exception exc = assertThrows(IllegalArgumentException.class, () -> EmployeeFactory.build("name@email.com",
+        Exception exc = assertThrows(IllegalArgumentException.class, () -> EmployeeFactory.build("test-id","name@email.com",
                 NameFactory.build("Sonwabile","","")));
 
         System.out.println("IllegalArgumentException: " + exc.getMessage());
