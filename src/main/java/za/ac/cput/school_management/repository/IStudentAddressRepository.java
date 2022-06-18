@@ -6,10 +6,15 @@
  */
 package za.ac.cput.school_management.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import za.ac.cput.school_management.domain.StudentAddress;
 
 import java.util.List;
 
-public interface IStudentAddressRepository extends IRepository<StudentAddress,String> {
+@Repository
+public interface IStudentAddressRepository extends JpaRepository<StudentAddress,String> {
     List<StudentAddress> getAll();
+    List<StudentAddress> findStudentAddressByStudentId(String studentId);
+
 }

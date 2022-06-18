@@ -6,12 +6,17 @@
  */
 package za.ac.cput.school_management.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.Objects;
-
-public class City {
+@Entity
+public class City implements Serializable {
+    @NotNull @Id
     private String id;
-    private String name;
-    private Country country;
+    @NotNull private String name;
+    @NotNull private Country country;
 
     private City(){
 

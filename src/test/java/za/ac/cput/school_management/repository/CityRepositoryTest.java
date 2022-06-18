@@ -1,3 +1,9 @@
+/**
+ * CityRepositoryTest.java
+ * test for cityRepository
+ * Author: Zintle Zothe(216130565)
+ * Date: 15 June 2022
+ */
 package za.ac.cput.school_management.repository;
 
 import org.junit.jupiter.api.MethodOrderer;
@@ -16,7 +22,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class CityRepositoryTest {
 
-        private static CityRepository repository=CityRepository.getRepository();
+
+        private static ICityRepository repository=null;
+    // private static CityRepository repository=CityRepository.getRepository();
         private static City city= CityFactory.createCity("City-200","Cape Town", CountryFactory.build( "South Africa"));
 
 
@@ -32,7 +40,8 @@ class CityRepositoryTest {
         @Test
         void c_read() {
             City saved=repository.save(city);
-            Optional<City> read= repository.read(saved.getId());
+           // Optional<City> read= repository.read(saved.getId());
+            Optional<City> read= repository.findById(saved.getId());
             assertAll(
                     ()-> assertTrue(read.isPresent()),
                     ()->assertSame(saved, read.get())
@@ -59,6 +68,21 @@ class CityRepositoryTest {
             System.out.println(repository.getAll());
         }
 
+
+
+   @Test
+    void e_findCityById(){
+        City city1= CityFactory.createCity("City-207","Cairo",CountryFactory.build("Egypt"));
+        City city2= CityFactory.createCity("City-206","Nairobi",CountryFactory.build("Kenya"));
+
+        City save = repository.save(city1);
+        City save1 = repository.save(city2);
+
+
+        List<City>  cities=repository.findCityById("City-206");
+        System.out.println(cities);
+        System.out.println("city with this id "+'\n'+cities);
+    }
 
 
     }
