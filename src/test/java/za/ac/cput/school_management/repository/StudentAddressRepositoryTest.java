@@ -23,7 +23,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class StudentAddressRepositoryTest {
-    private static StudentAddressRepository repository=StudentAddressRepository.getRepository();
+//    private static StudentAddressRepository repository=StudentAddressRepository.getRepository();
+     private static IStudentAddressRepository repository=null;
     private static StudentAddress studentAddress= StudentAddressFactory.createStudentAddress("student-200", AddressFactory.buildAddress("","","41086","Osaka","7784",
             CityFactory.createCity("City-300","Tokyo",
                     CountryFactory.build("Japan"))));
@@ -40,7 +41,8 @@ class StudentAddressRepositoryTest {
     @Test
     void c_read() {
         StudentAddress saved=repository.save(studentAddress);
-        Optional<StudentAddress> read= repository.read(saved.getStudentId());
+       // Optional<StudentAddress> read= repository.read(saved.getStudentId());
+        Optional<StudentAddress> read= repository.findById(saved.getStudentId());
         assertAll(
                 ()-> assertTrue(read.isPresent()),
                 ()->assertSame(saved, read.get())

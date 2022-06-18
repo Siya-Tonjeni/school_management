@@ -6,28 +6,22 @@
  */
 package za.ac.cput.school_management.service;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.City;
-import za.ac.cput.school_management.repository.CityRepository;
+//import za.ac.cput.school_management.repository.CityRepository;
+import za.ac.cput.school_management.repository.ICityRepository;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CityService implements ICityService{
-    private final CityRepository repository;
-    private static CityService service;
+    private final ICityRepository repository;
 
-
-    private CityService(){
-        this.repository= CityRepository.getRepository();
-    }
-
-    public static CityService getService(){
-        if(service==null){
-            service=new CityService();
-        }
-        return service;
+    public CityService(ICityRepository repository){
+        this.repository= repository;
     }
 
     @Override
@@ -37,7 +31,7 @@ public class CityService implements ICityService{
 
     @Override
     public Optional<City> read(String id) {
-        return this.repository.read(id);
+        return this.repository.findById(id);
     }
 
     @Override

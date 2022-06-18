@@ -6,36 +6,30 @@
  */
 package za.ac.cput.school_management.service;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.StudentAddress;
-import za.ac.cput.school_management.repository.CityRepository;
-import za.ac.cput.school_management.repository.StudentAddressRepository;
+import za.ac.cput.school_management.repository.IStudentAddressRepository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class StudentAddressService implements IStudentAddressService{
-    private final StudentAddressRepository repository;
-    private static StudentAddressService service;
+    private final IStudentAddressRepository repository;
+    public StudentAddressService(IStudentAddressRepository repository){
+        this.repository=repository;
+    };
 
-    private StudentAddressService(){
-        this.repository= StudentAddressRepository.getRepository();
-    }
-
-    public static StudentAddressService getService(){
-        if(service==null){
-            service=new StudentAddressService();
-        }
-        return service;
-    }
 
     @Override
     public StudentAddress save(StudentAddress studentAddress) {
+
         return this.repository.save(studentAddress);
     }
 
     @Override
     public Optional<StudentAddress> read(String studentId) {
-        return this.repository.read(studentId);
+        return this.repository.findById(studentId);
     }
 
     @Override

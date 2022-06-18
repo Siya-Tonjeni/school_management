@@ -6,12 +6,15 @@
  */
 package za.ac.cput.school_management.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import za.ac.cput.school_management.domain.City;
 
 
 import java.util.List;
 
-public interface ICityRepository extends IRepository<City,String> {
+@Repository
+public interface ICityRepository extends JpaRepository<City,String> {
     List<City> getAll();
     //public List<City> getCitiesGivenACountryId (String countryId);
     public List<City> findCityById(String cityId);

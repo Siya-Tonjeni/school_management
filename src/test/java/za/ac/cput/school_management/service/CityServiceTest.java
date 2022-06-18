@@ -12,7 +12,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.school_management.domain.City;
 import za.ac.cput.school_management.factory.CityFactory;
 import za.ac.cput.school_management.factory.CountryFactory;
-import za.ac.cput.school_management.repository.CityRepository;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class CityServiceTest {
-    private static final CityService service=CityService.getService();
+    private static final CityService service=null;
     private static City city= CityFactory.createCity("City-204","Bloemfontein", CountryFactory.build("South Africa"));
 
 

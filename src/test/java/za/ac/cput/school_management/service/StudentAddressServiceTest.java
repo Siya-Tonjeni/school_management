@@ -25,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class StudentAddressServiceTest {
 
 
-    private static final StudentAddressService service=StudentAddressService.getService();
+    private static final StudentAddressService service=null;
     private static StudentAddress studentAddress= StudentAddressFactory.createStudentAddress("student-200", AddressFactory.buildAddress("","","41086","Osaka","7784",
             CityFactory.createCity("City-300","Tokyo",
                     CountryFactory.build("Japan"))));
