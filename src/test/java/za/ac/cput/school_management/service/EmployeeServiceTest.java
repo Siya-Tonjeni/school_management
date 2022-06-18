@@ -15,6 +15,7 @@ import za.ac.cput.school_management.domain.Name;
 import za.ac.cput.school_management.factory.EmployeeFactory;
 import za.ac.cput.school_management.factory.NameFactory;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -52,5 +53,13 @@ class EmployeeServiceTest {
     void delete() {
         service.delete(emp);
         System.out.println("Delete Result: " + service.getAll());
+    }
+
+    @Test
+    void getEmployeeNameByEmail(){
+        service.save(emp);
+        List<Employee> get = service.getEmployeeNameByEmail("name1@cput.ac.za");
+        assertNotNull(get);
+        System.out.println("Value: " + get);
     }
 }
