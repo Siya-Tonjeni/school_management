@@ -4,9 +4,9 @@
  * Author:Zintle Zothe(216130565)
  * Date:  10 June 2022
  */
-package za.ac.cput.school_management.factory;
+package za.ac.cput.school_management.factory.geography;
 
-import za.ac.cput.school_management.domain.City;
+import za.ac.cput.school_management.domain.geography.City;
 import za.ac.cput.school_management.domain.Country;
 import za.ac.cput.school_management.util.helper;
 

@@ -4,16 +4,15 @@
  * Author: Zintle Zothe(216130565)
  * Date: 14 June 2022
  */
-package za.ac.cput.school_management.controller;
+package za.ac.cput.school_management.controller.geography;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import za.ac.cput.school_management.domain.City;
+import za.ac.cput.school_management.domain.geography.City;
 import za.ac.cput.school_management.service.CityService;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController

@@ -9,9 +9,10 @@ package za.ac.cput.school_management.repository;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import za.ac.cput.school_management.domain.City;
-import za.ac.cput.school_management.factory.CityFactory;
+import za.ac.cput.school_management.domain.geography.City;
+import za.ac.cput.school_management.factory.geography.CityFactory;
 import za.ac.cput.school_management.factory.CountryFactory;
+import za.ac.cput.school_management.repository.geography.ICityRepository;
 
 import java.util.List;
 import java.util.Optional;

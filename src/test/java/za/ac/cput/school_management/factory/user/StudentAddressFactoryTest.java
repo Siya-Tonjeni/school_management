@@ -4,11 +4,15 @@
  * Author:Zintle Zothe(216130565)
  * Date:  12 June 2022
  */
-package za.ac.cput.school_management.factory;
+package za.ac.cput.school_management.factory.user;
 
 import org.junit.jupiter.api.Test;
 import za.ac.cput.school_management.domain.Address;
-import za.ac.cput.school_management.domain.StudentAddress;
+import za.ac.cput.school_management.domain.user.StudentAddress;
+import za.ac.cput.school_management.factory.AddressFactory;
+import za.ac.cput.school_management.factory.CountryFactory;
+import za.ac.cput.school_management.factory.geography.CityFactory;
+import za.ac.cput.school_management.factory.user.StudentAddressFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,7 +21,7 @@ class StudentAddressFactoryTest {
     //createCity with errors to check if it throws an exception
     public void createStudentAddressWithAnError(){
         Exception exception= assertThrows(IllegalArgumentException.class, ()->
-                StudentAddressFactory.createStudentAddress("",AddressFactory.buildAddress("","","","","",
+                StudentAddressFactory.createStudentAddress("", AddressFactory.buildAddress("","","","","",
                         CityFactory.createCity("","",
                                 CountryFactory.build("","")))));
         String exceptionMessage = exception.getMessage();
