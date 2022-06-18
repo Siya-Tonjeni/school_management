@@ -27,20 +27,26 @@ public class helper {
 
     }
 
-    public static boolean isEmptyOrNull(String string) {
-        return StringUtils.isEmpty(string);
+    public static String checkPostalCode(String postalCode){
+        if(postalCode.length() < 1000){
+            throw new IllegalArgumentException("Postal code must be between 1000 and 9999");
+        } if(postalCode.length() > 9999){
+            throw new IllegalArgumentException("Postal code must be between 1000 and 9999");
+        }
+        return postalCode;
     }
+
+    public static boolean isEmptyOrNull(String s) {
+        if(s.equals("")) {
+            throw new IllegalArgumentException(" Please fill in the required field");
+        }
+        return false;
+    }
+
     public static String setEmptyIfNull(String string){
         if(isEmptyOrNull(string)) return StringUtils.EMPTY;
         return string;
     }
-
-//    public static boolean isEmptyOrNull(String s) {
-//        if (s == null || s.isEmpty() || s.equals(""))
-//            throw new IllegalArgumentException(" Please fill in the required field");
-//        return false;
-//    }
-
 
     public static void checkStringParam(String paramName, String paramValue){
         if(isEmptyOrNull(paramValue))
