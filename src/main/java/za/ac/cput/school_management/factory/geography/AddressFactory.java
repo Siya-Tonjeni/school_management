@@ -7,11 +7,12 @@
 package za.ac.cput.school_management.factory.geography;
 
 import za.ac.cput.school_management.domain.geography.Address;
-import za.ac.cput.school_management.domain.City;
+import za.ac.cput.school_management.domain.geography.City;
 import za.ac.cput.school_management.util.helper;
 
 public class AddressFactory {
-    public static Address buildAddress(String unitNumber, String complexName,String streetNumber, String streetName, String postalCode, City city){
+    public static Address buildAddress(String unitNumber, String complexName,String streetNumber,
+                                       String streetName, String postalCode, City city){
 
         helper.setEmptyIfNull(unitNumber);
         helper.setEmptyIfNull(complexName);

@@ -9,7 +9,7 @@ package za.ac.cput.school_management.factory.geography;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.school_management.domain.geography.Address;
-import za.ac.cput.school_management.factory.CityFactory;
+import za.ac.cput.school_management.factory.geography.CityFactory;
 import za.ac.cput.school_management.factory.CountryFactory;
 import za.ac.cput.school_management.factory.geography.AddressFactory;
 
