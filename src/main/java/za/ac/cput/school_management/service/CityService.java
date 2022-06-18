@@ -7,9 +7,9 @@
 package za.ac.cput.school_management.service;
 
 import org.springframework.stereotype.Service;
-import za.ac.cput.school_management.domain.City;
+import za.ac.cput.school_management.domain.geography.City;
 //import za.ac.cput.school_management.repository.CityRepository;
-import za.ac.cput.school_management.repository.ICityRepository;
+import za.ac.cput.school_management.repository.geography.ICityRepository;
 
 import java.util.ArrayList;
 import java.util.Comparator;

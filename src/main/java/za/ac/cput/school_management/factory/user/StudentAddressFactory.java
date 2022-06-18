@@ -4,10 +4,10 @@
  * Author:Zintle Zothe(216130565)
  * Date:  10 June 2022
  */
-package za.ac.cput.school_management.factory;
+package za.ac.cput.school_management.factory.user;
 
 import za.ac.cput.school_management.domain.Address;
-import za.ac.cput.school_management.domain.StudentAddress;
+import za.ac.cput.school_management.domain.user.StudentAddress;
 import za.ac.cput.school_management.util.helper;
 
 public class StudentAddressFactory {

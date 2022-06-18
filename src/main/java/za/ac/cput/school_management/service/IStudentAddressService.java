@@ -6,7 +6,7 @@
  */
 package za.ac.cput.school_management.service;
 
-import za.ac.cput.school_management.domain.StudentAddress;
+import za.ac.cput.school_management.domain.user.StudentAddress;
 
 import java.util.List;
 

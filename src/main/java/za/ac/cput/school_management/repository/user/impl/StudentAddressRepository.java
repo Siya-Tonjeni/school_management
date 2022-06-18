@@ -7,7 +7,7 @@
 //package za.ac.cput.school_management.repository;
 //
 //import org.springframework.stereotype.Repository;
-//import za.ac.cput.school_management.domain.StudentAddress;
+//import za.ac.cput.school_management.domain.user.StudentAddress;
 //
 //import java.util.ArrayList;
 //import java.util.List;

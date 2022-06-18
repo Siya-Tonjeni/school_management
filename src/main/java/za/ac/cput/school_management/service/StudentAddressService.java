@@ -7,8 +7,8 @@
 package za.ac.cput.school_management.service;
 
 import org.springframework.stereotype.Service;
-import za.ac.cput.school_management.domain.StudentAddress;
-import za.ac.cput.school_management.repository.IStudentAddressRepository;
+import za.ac.cput.school_management.domain.user.StudentAddress;
+import za.ac.cput.school_management.repository.user.IStudentAddressRepository;
 //import za.ac.cput.school_management.repository.StudentAddressRepository;
 
 import java.util.List;
