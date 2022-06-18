@@ -4,16 +4,17 @@
  * Author: Zintle Zothe(216130565)
  * Date: 15 June 2022
  */
-package za.ac.cput.school_management.service;
+package za.ac.cput.school_management.service.user;
 
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import za.ac.cput.school_management.domain.StudentAddress;
+import za.ac.cput.school_management.domain.user.StudentAddress;
 import za.ac.cput.school_management.factory.AddressFactory;
-import za.ac.cput.school_management.factory.CityFactory;
+import za.ac.cput.school_management.factory.geography.CityFactory;
 import za.ac.cput.school_management.factory.CountryFactory;
-import za.ac.cput.school_management.factory.StudentAddressFactory;
+import za.ac.cput.school_management.factory.user.StudentAddressFactory;
+import za.ac.cput.school_management.service.StudentAddressService;
 
 
 import java.util.List;

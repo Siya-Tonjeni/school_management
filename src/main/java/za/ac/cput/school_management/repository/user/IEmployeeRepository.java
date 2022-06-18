@@ -4,7 +4,7 @@
  * Author: Sonwabile Gxoyiya (219267189)
  * Date: 15 June 2022
  */
-package za.ac.cput.school_management.repository.impl.user;
+package za.ac.cput.school_management.repository.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

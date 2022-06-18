@@ -2,7 +2,7 @@
  * NameFactoryTest.java
  * Test class for NameFactory.java
  * Author: Sonwabile Gxoyiya (219267189)
- * Date: 10 June 2022
+ * Date: 18 June 2022
  */
 package za.ac.cput.school_management.factory.user;
 
@@ -38,7 +38,7 @@ class NameFactoryTest {
     }
 
     @Test
-    @DisplayName("Test Throwing an IllegalArgumentException for FirstName.")
+    @DisplayName("Test Throwing an IllegalArgumentException if FirstName is empty.")
     public void testExceptionForFirstName(){
 
         Exception exc = assertThrows(IllegalArgumentException.class,  () -> NameFactory.build("","","Gxoyiya"));
@@ -46,7 +46,7 @@ class NameFactoryTest {
     }
 
     @Test
-    @DisplayName("Test Throwing an IllegalArgumentException for LastName.")
+    @DisplayName("Test Throwing an IllegalArgumentException if LastName is empty.")
     public void testExceptionForLastName(){
         Exception exc = assertThrows(IllegalArgumentException.class, () ->  NameFactory.build("Sonwabile","",""));
         System.out.println("IllegalArgumentException: " + exc.getMessage());

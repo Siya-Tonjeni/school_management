@@ -6,7 +6,7 @@
  */
 package za.ac.cput.school_management.service;
 
-import za.ac.cput.school_management.domain.City;
+import za.ac.cput.school_management.domain.geography.City;
 
 import java.util.List;
 

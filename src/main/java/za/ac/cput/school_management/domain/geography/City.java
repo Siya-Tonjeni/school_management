@@ -4,7 +4,9 @@
  * Author:Zintle Zothe(216130565)
  * Date:  9 June 2022
  */
-package za.ac.cput.school_management.domain;
+package za.ac.cput.school_management.domain.geography;
+
+import za.ac.cput.school_management.domain.Country;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
