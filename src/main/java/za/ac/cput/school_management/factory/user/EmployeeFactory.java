@@ -4,13 +4,13 @@
  * Author: Sonwabile Gxoyiya (219267189)
  * Date: 9 June 2022
  */
-package za.ac.cput.school_management.factory;
-import za.ac.cput.school_management.domain.Employee;
-import za.ac.cput.school_management.domain.Name;
+package za.ac.cput.school_management.factory.user;
+import za.ac.cput.school_management.domain.user.Employee;
+import za.ac.cput.school_management.domain.user.Name;
 import za.ac.cput.school_management.util.helper;
 
 public class EmployeeFactory {
-    public static Employee build( String email, Name name){
+    public static Employee build( String staffId, String email, Name name){
 
         if(email.equals("")){
             throw new IllegalArgumentException("Email is empty.");
@@ -22,7 +22,7 @@ public class EmployeeFactory {
 
 
 
-        String staffId = helper.generateUUID();
+        //String staffId = helper.generateUUID();
         return new Employee.Builder()
                 .setStaffId(staffId)
                 .setEmail(email)

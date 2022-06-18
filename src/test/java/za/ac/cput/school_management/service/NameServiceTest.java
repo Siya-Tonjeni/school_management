@@ -10,8 +10,8 @@
 //import org.junit.jupiter.api.Test;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.boot.test.context.SpringBootTest;
-//import za.ac.cput.school_management.domain.Name;
-//import za.ac.cput.school_management.factory.NameFactory;
+//import za.ac.cput.school_management.domain.user.Name;
+//import za.ac.cput.school_management.factory.user.NameFactory;
 //
 //import static org.junit.jupiter.api.Assertions.*;
 //@SpringBootTest

@@ -1,4 +1,4 @@
-package za.ac.cput.school_management.domain;
+package za.ac.cput.school_management.domain.geography;
 /*
 To be deleted by group lead.
  */

@@ -8,9 +8,9 @@
 //
 //import org.junit.jupiter.api.Test;
 //import org.springframework.boot.test.context.SpringBootTest;
-//import za.ac.cput.school_management.domain.Employee;
-//import za.ac.cput.school_management.factory.EmployeeFactory;
-//import za.ac.cput.school_management.factory.NameFactory;
+//import za.ac.cput.school_management.domain.user.Employee;
+//import za.ac.cput.school_management.factory.user.EmployeeFactory;
+//import za.ac.cput.school_management.factory.user.NameFactory;
 //
 //import static org.junit.jupiter.api.Assertions.*;
 //@SpringBootTest
