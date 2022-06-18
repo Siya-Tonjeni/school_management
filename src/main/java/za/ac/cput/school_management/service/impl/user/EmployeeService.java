@@ -1,8 +1,8 @@
 /**
  * EmployeeService.java
- * Service implementation for Employee
+ * Service implementation for IEmployeeService.java
  * Author: Sonwabile Gxoyiya (219267189)
- * Date: 16 June 2022
+ * Date: 18 June 2022
  */
 
 package za.ac.cput.school_management.service.impl.user;
@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.user.Employee;
 //import za.ac.cput.school_management.repository.EmployeeRepository;
-import za.ac.cput.school_management.repository.impl.user.IEmployeeRepository;
+import za.ac.cput.school_management.repository.user.IEmployeeRepository;
 
 import java.util.ArrayList;
 import java.util.List;
