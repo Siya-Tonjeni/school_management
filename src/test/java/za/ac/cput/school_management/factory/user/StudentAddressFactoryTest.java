@@ -7,9 +7,9 @@
 package za.ac.cput.school_management.factory.user;
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.school_management.domain.Address;
+import za.ac.cput.school_management.domain.geography.Address;
 import za.ac.cput.school_management.domain.user.StudentAddress;
-import za.ac.cput.school_management.factory.AddressFactory;
+import za.ac.cput.school_management.factory.geography.AddressFactory;
 import za.ac.cput.school_management.factory.CountryFactory;
 import za.ac.cput.school_management.factory.geography.CityFactory;
 import za.ac.cput.school_management.factory.user.StudentAddressFactory;

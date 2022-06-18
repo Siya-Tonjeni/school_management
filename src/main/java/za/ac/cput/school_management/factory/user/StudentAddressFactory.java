@@ -5,8 +5,7 @@
  * Date:  10 June 2022
  */
 package za.ac.cput.school_management.factory.user;
-
-import za.ac.cput.school_management.domain.Address;
+import za.ac.cput.school_management.domain.geography.Address;
 import za.ac.cput.school_management.domain.user.StudentAddress;
 import za.ac.cput.school_management.util.helper;
 
