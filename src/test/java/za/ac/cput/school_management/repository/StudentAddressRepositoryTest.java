@@ -10,7 +10,7 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.school_management.domain.user.StudentAddress;
-import za.ac.cput.school_management.factory.AddressFactory;
+import za.ac.cput.school_management.factory.geography.AddressFactory;
 import za.ac.cput.school_management.factory.geography.CityFactory;
 import za.ac.cput.school_management.factory.CountryFactory;
 import za.ac.cput.school_management.factory.user.StudentAddressFactory;
@@ -41,8 +41,8 @@ class StudentAddressRepositoryTest {
     @Test
     void c_read() {
         StudentAddress saved=repository.save(studentAddress);
-//        Optional<StudentAddress> read= repository.read(saved.getStudentId());
-        Optional<StudentAddress> read= repository.findById(saved.getStudentId());
+     //Optional<StudentAddress> read= repository.read(saved.getStudentId());
+       Optional<StudentAddress> read= repository.findById(saved.getStudentId());
         assertAll(
                 ()-> assertTrue(read.isPresent()),
                 ()->assertSame(saved, read.get())
@@ -71,22 +71,22 @@ class StudentAddressRepositoryTest {
         System.out.println(repository.getAll());
     }
 
-    @Test
-    void e_findStudentAddressByStudentId(){
-        StudentAddress studentAddress1 =StudentAddressFactory.createStudentAddress("student100", AddressFactory.buildAddress("","","41086","Osaka","7784",
-                CityFactory.createCity("City-300","Tokyo",
-                        CountryFactory.build("Country-300","Japan"))));
-
-        StudentAddress studentAddress2 = StudentAddressFactory.createStudentAddress("student101", AddressFactory.buildAddress("","","41000","Zamalek","7700",
-                CityFactory.createCity("City-400","Cairo",
-                        CountryFactory.build("Country-400","Egypt"))));
-
-        StudentAddress save = repository.save(studentAddress1);
-        StudentAddress save1 = repository.save(studentAddress2);
-
-
-    List<StudentAddress>  sa=repository.findStudentAddressByStudentId("student101");
-        System.out.println("student address "+'\n'+sa);
-
-}
+//    @Test
+//    void e_findStudentAddressByStudentId(){
+//        StudentAddress studentAddress1 =StudentAddressFactory.createStudentAddress("student100", AddressFactory.buildAddress("","","41086","Osaka","7784",
+//                CityFactory.createCity("City-300","Tokyo",
+//                        CountryFactory.build("Country-300","Japan"))));
+//
+//        StudentAddress studentAddress2 = StudentAddressFactory.createStudentAddress("student101", AddressFactory.buildAddress("","","41000","Zamalek","7700",
+//                CityFactory.createCity("City-400","Cairo",
+//                        CountryFactory.build("Country-400","Egypt"))));
+//
+//        StudentAddress save = repository.save(studentAddress1);
+//        StudentAddress save1 = repository.save(studentAddress2);
+//
+//
+//    List<StudentAddress>  sa=repository.findStudentAddressByStudentId("student101");
+//        System.out.println("student address "+'\n'+sa);
+//
+//}
 }

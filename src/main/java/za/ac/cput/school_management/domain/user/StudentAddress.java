@@ -6,7 +6,8 @@
  */
 package za.ac.cput.school_management.domain.user;
 
-import za.ac.cput.school_management.domain.Address;
+
+import za.ac.cput.school_management.domain.geography.Address;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
