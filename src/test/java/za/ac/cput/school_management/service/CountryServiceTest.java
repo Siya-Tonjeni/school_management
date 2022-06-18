@@ -2,6 +2,7 @@ package za.ac.cput.school_management.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -17,8 +18,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 //@DataJpaTest
-@ContextConfiguration
-@TestComponent
+//@ContextConfiguration
+//@TestComponent
 @SpringBootConfiguration
 @SpringBootTest
 class CountryServiceTest {
@@ -38,7 +39,8 @@ class CountryServiceTest {
 
     }
 
-    @Test
+    @ParameterizedTest
+   // @Test
     void save() {
         assertNotNull(countryService.save(country));
         System.out.println("Countries saved:"+ countryService.getAll());
@@ -52,7 +54,8 @@ class CountryServiceTest {
         System.out.println("Value :"+read);
     }
 
-    @Test
+    @ParameterizedTest
+    //@Test
     void delete() {
         countryService.delete(country);
         System.out.println("A country is deleted");

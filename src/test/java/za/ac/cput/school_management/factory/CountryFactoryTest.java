@@ -63,7 +63,7 @@ class CountryFactoryTest {
     @Test
     @Timeout(1)
     void testTimeOUt() throws InterruptedException {
-        Thread.sleep(998);
+        Thread.sleep(980);
         System.out.println("Test passes");
     }
 

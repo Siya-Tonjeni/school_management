@@ -17,12 +17,12 @@ public class AddressServiceTest {
 
     @Autowired private AddressService addressService;
 
-    @BeforeEach void setUp(){
-        address = AddressFactory.buildAddress("B12", "Palms","28",
-                "Long","8001", CityFactory.build("2172","Cape Town",
-                        CountryFactory.build("South Africa")));
-        addressService.save(address);
-    }
+//    @BeforeEach void setUp(){
+//        address = AddressFactory.buildAddress("B12", "Palms","28",
+//                "Long","8001", CityFactory.build("2172","Cape Town",
+//                        CountryFactory.build("South Africa")));
+//        addressService.save(address);
+//    }
 
     @Test void save(){
         assertNotNull(addressService.save(address));
