@@ -1,8 +1,8 @@
 /**
  * EmployeeFactoryTest.java
- * Test class for EmployeeFactory
+ * Test class for EmployeeFactory.java
  * Author: Sonwabile Gxoyiya (219267189)
- * Date: 10 June 2022
+ * Date: 18 June 2022
  */
 package za.ac.cput.school_management.factory.user;
 
@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class EmployeeFactoryTest {
 
     @Test
-    @DisplayName("Test Creating the Employee Object")
+    @DisplayName("Test Creating the Employee Object.")
     public void testCreate(){
         Employee emp = EmployeeFactory.build("test-id","name@email.ac.za",
                 NameFactory.build("Sonwabile","","Gxoyiya"));
@@ -28,7 +28,7 @@ class EmployeeFactoryTest {
 
 
     @Test
-    @DisplayName("Test Employee Object Identity")
+    @DisplayName("Test Employee Object Identity.")
     public void testNotSame(){
 
         Employee emp1 = EmployeeFactory.build("test-id","email@gmail.com",
@@ -43,7 +43,7 @@ class EmployeeFactoryTest {
     }
 
     @Test
-    @DisplayName("Test Employee Object Equality")
+    @DisplayName("Test Employee Object Equality.")
     public void testIsEqual(){
 
         Employee emp1 = EmployeeFactory.build("test-id1","email@gmail.com",
@@ -59,6 +59,7 @@ class EmployeeFactoryTest {
 
 
     @Test
+    @DisplayName("Test throws IllegalArgumentException if email is invalid.")
     public void testEmailException(){
         Exception exc = assertThrows(IllegalArgumentException.class, () -> EmployeeFactory.build("test-id","2322",
                 NameFactory.build("Sonwabile","","Gxoyiya")));
@@ -67,6 +68,7 @@ class EmployeeFactoryTest {
     }
 
     @Test
+    @DisplayName("Test throws IllegalArgumentException if FirstName is empty.")
     public void testFirstNameException(){
         Exception exc = assertThrows(IllegalArgumentException.class, () -> EmployeeFactory.build("test-id","name@email.com",
                 NameFactory.build("","","Gxoyiya")));
@@ -75,6 +77,7 @@ class EmployeeFactoryTest {
     }
 
     @Test
+    @DisplayName("Test throws IllegalArgumentException if LastName is empty.")
     public void testLastNameException(){
         Exception exc = assertThrows(IllegalArgumentException.class, () -> EmployeeFactory.build("test-id","name@email.com",
                 NameFactory.build("Sonwabile","","")));

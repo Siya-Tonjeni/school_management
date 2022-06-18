@@ -1,8 +1,8 @@
 /**
  * EmployeeServiceTest.java
- * Test class for EmployeeService
+ * Test class for EmployeeService.java
  * Author: Sonwabile Gxoyiya (219267189)
- * Date: 16 June 2022
+ * Date: 18 June 2022
  */
 package za.ac.cput.school_management.service.user;
 
