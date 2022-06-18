@@ -19,7 +19,7 @@ class StudentAddressFactoryTest {
         Exception exception= assertThrows(IllegalArgumentException.class, ()->
                 StudentAddressFactory.createStudentAddress("",AddressFactory.buildAddress("","","","","",
                         CityFactory.createCity("","",
-                                CountryFactory.build("")))));
+                                CountryFactory.build("","")))));
         String exceptionMessage = exception.getMessage();
         System.out.println(exception.getMessage());
         assertTrue(exception.getMessage().contains("id"));
@@ -31,7 +31,7 @@ class StudentAddressFactoryTest {
     void createStudentAddressWithNoErrors(){
         Address address=AddressFactory.buildAddress("","","41086","Shiyeka","7784",
                 CityFactory.createCity("City-200","Cape Town",
-                        CountryFactory.build("South Africa")));
+                        CountryFactory.build("Country-200","South Africa")));
         StudentAddress studentAddress= StudentAddressFactory.createStudentAddress("Student-1",address);
         System.out.println(studentAddress);
         assertAll(

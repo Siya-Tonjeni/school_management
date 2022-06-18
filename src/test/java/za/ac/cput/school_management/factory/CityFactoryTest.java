@@ -17,7 +17,7 @@ class CityFactoryTest {
     //createCity with errors to check if it throws an exception
     public void createCityWithError(){
         Exception exception= assertThrows(IllegalArgumentException.class, ()->
-                CityFactory.createCity("","Nairobi",CountryFactory.build("Kenya")));
+                CityFactory.createCity("","Nairobi",CountryFactory.build("Country-100","Kenya")));
         String exceptionMessage = exception.getMessage();
         System.out.println(exception.getMessage());
         assertTrue(exception.getMessage().contains("id"));
@@ -28,7 +28,7 @@ class CityFactoryTest {
     @Test
         //shows successful createCity test results
     void createCityWithNoErrors(){
-        Country country=CountryFactory.build("South Africa");
+        Country country=CountryFactory.build("Country-200","South Africa");
         City city= CityFactory.createCity("City-200","cape town",country);
         System.out.println(city);
         assertAll(

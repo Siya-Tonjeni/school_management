@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class CityServiceTest {
     private static final CityService service=null;
-    private static City city= CityFactory.createCity("City-204","Bloemfontein", CountryFactory.build("South Africa"));
+    private static City city= CityFactory.createCity("City-204","Bloemfontein", CountryFactory.build("Country-200","South Africa"));
 
 
 
@@ -67,40 +67,30 @@ class CityServiceTest {
 
     @Test
     void f_getCitiesGivenACountryId(){
-        City city1= CityFactory.createCity("City-205","Pretoria",CountryFactory.build("South Africa"));
-        City city2= CityFactory.createCity("City-201","Durban",CountryFactory.build("South Africa"));
-        City city3= CityFactory.createCity("City-202","Cape Town",CountryFactory.build("South Africa"));
+        City city1= CityFactory.createCity("City-205","Pretoria",CountryFactory.build("Country-200","South Africa"));
+        City city2= CityFactory.createCity("City-201","Durban",CountryFactory.build("Country-200","South Africa"));
+        City city3= CityFactory.createCity("City-400","Cairo",CountryFactory.build("Country-400","Egypt"));
 
         City save = service.save(city1);
         City save1 = service.save(city2);
         City save2 = service.save(city3);
 
         System.out.println("List of cities in this Country: ");
-        List<City>  cityList=service.getCitiesGivenACountryId("89eb37ba-9549-45c6-b4d9-4f05642c8120");
+        List<City>  cityList=service.getCitiesGivenACountryId("Country-200");
 
 
-//        City city1= CityFactory.createCity("City-205","Pretoria",CountryFactory.build("Country-200","South Africa"));
-//        City city2= CityFactory.createCity("City-201","Durban",CountryFactory.build("Country-200","South Africa"));
-//        City city3= CityFactory.createCity("City-202","Cape Town",CountryFactory.build("Country-200","South Africa"));
-//
-//        City save = repository.save(city1);
-//        City save1 = repository.save(city2);
-//        City save2 = repository.save(city3);
-//
-//        System.out.println("List of cities in this Country: ");
-//        List<City>  cityList=repository.getCitiesGivenACountryId("Country-200");
 
         }
 
     @Test
     void e_findCityById(){
-        City city1= CityFactory.createCity("City-207","Cairo",CountryFactory.build("Egypt"));
-        City city2= CityFactory.createCity("City-206","Nairobi",CountryFactory.build("Kenya"));
+        City city1= CityFactory.createCity("City-400","Cairo",CountryFactory.build("Country-400","Egypt"));
+        City city2= CityFactory.createCity("City-500","Nairobi",CountryFactory.build("Country-","Kenya"));
 
         City save = service.save(city1);
         City save1 = service.save(city2);
 
-        List<City>  cities=service.findCityById("City-206");
+        List<City>  cities=service.findCityById("City-400");
         System.out.println(cities);
         System.out.println();
     }

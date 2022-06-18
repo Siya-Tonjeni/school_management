@@ -25,10 +25,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class StudentAddressServiceTest {
 
 
-    private static final StudentAddressService service=null;
+   private static final StudentAddressService service=null;
+  //  private static StudentAddressService service=StudentAddressService.getService();
     private static StudentAddress studentAddress= StudentAddressFactory.createStudentAddress("student-200", AddressFactory.buildAddress("","","41086","Osaka","7784",
             CityFactory.createCity("City-300","Tokyo",
-                    CountryFactory.build("Japan"))));
+                    CountryFactory.build("Country-300","Japan"))));
 
 
     @Test
@@ -75,11 +76,11 @@ class StudentAddressServiceTest {
     void e_findStudentAddressByStudentId(){
         StudentAddress studentAddress1 =StudentAddressFactory.createStudentAddress("student100", AddressFactory.buildAddress("","","41086","Osaka","7784",
                 CityFactory.createCity("City-300","Tokyo",
-                        CountryFactory.build("Japan"))));
+                        CountryFactory.build("Country-300","Japan"))));
 
         StudentAddress studentAddress2 = StudentAddressFactory.createStudentAddress("student101", AddressFactory.buildAddress("","","41000","Zamalek","7700",
                 CityFactory.createCity("City-400","Cairo",
-                        CountryFactory.build("Egypt"))));
+                        CountryFactory.build("Country-300","Egypt"))));
 
         StudentAddress save = service.save(studentAddress1);
         StudentAddress save1 = service.save(studentAddress2);

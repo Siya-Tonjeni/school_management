@@ -24,11 +24,27 @@ public class CityService implements ICityService{
         this.repository= repository;
     }
 
+//    private static CityService service=null;
+//    private CityRepository repository;
+//
+//    private CityService(){
+//        this.repository= CityRepository.getRepository();
+//    }
+//    public static CityService getService(){
+//        if(service==null){
+//            service=new CityService();
+//        }
+//        return service;
+//    }
     @Override
     public City save(City city) {
         return this.repository.save(city);
     }
 
+//    @Override
+//    public Optional<City> read(String id) {
+//        return this.repository.read(id);
+//    }
     @Override
     public Optional<City> read(String id) {
         return this.repository.findById(id);
