@@ -6,9 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import za.ac.cput.school_management.domain.Country;
-import za.ac.cput.school_management.domain.Employee;
 import za.ac.cput.school_management.service.CountryService;
-import za.ac.cput.school_management.service.EmployeeService;
 import java.util.List;
 
 
@@ -30,9 +28,9 @@ import java.util.List;
             return ResponseEntity.ok(save);
         }
 
-        @GetMapping("read/{s}")
+        @GetMapping("read/{id}")
         public ResponseEntity<Country> read(@PathVariable Country id){
-            Country read = CountryService.read(String.valueOf(id)).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+            Country read = countryService.read(String.valueOf(id)).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
             return ResponseEntity.ok(read);
         }
 

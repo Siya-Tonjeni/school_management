@@ -7,13 +7,25 @@ package za.ac.cput.school_management.domain;
  * Date Created: 9 June 2022
  *
  */
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+//import javax.util.Object;
+@NotNull
+@Entity
 public class Country {
+   // @NotNull @Id private String id;
 
-    private String id;	
-    private String name;
-    
+    //Add the @Entity ontop of the class and add @NotNull to String id and name
 
-public String getId(){
+    @Id private String id;
+     private String name;
+
+    protected Country() {
+    }
+
+
+    public String getId(){
         return id;
     }
 
