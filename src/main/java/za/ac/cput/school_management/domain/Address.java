@@ -6,6 +6,8 @@
  */
 package za.ac.cput.school_management.domain;
 
+import za.ac.cput.school_management.domain.geography.City;
+
 public class Address {
 
     private String unitNumber;
