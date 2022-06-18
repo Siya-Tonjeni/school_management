@@ -1,13 +1,14 @@
-///**
-// * StudentAddressRepository.java
-// * class for StudentAddress
-// * Author: Zintle Zothe(216130565)
-// * Date: 14 June 2022
-// */
-//package za.ac.cput.school_management.repository;
-//
+ /**
+ * StudentAddressRepository.java
+ * class for StudentAddress
+ * Author: Zintle Zothe(216130565)
+ * Date: 14 June 2022
+ */
+
+//package za.ac.cput.school_management.repository.user.impl;
 //import org.springframework.stereotype.Repository;
 //import za.ac.cput.school_management.domain.user.StudentAddress;
+//import za.ac.cput.school_management.repository.user.IStudentAddressRepository;
 //
 //import java.util.ArrayList;
 //import java.util.List;
@@ -71,4 +72,4 @@
 //
 //
 //}
-//
+

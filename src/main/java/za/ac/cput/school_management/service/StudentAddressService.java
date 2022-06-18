@@ -9,6 +9,7 @@ package za.ac.cput.school_management.service;
 import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.user.StudentAddress;
 import za.ac.cput.school_management.repository.user.IStudentAddressRepository;
+//import za.ac.cput.school_management.repository.user.impl.StudentAddressRepository;
 //import za.ac.cput.school_management.repository.StudentAddressRepository;
 
 import java.util.List;
@@ -46,6 +47,7 @@ public class StudentAddressService implements IStudentAddressService{
     public Optional<StudentAddress> read(String studentId) {
         return this.repository.findById(studentId);
     }
+
 //    @Override
 //    public Optional<StudentAddress> read(String studentId) {
 //        return this.repository.read(studentId);
@@ -62,10 +64,10 @@ public class StudentAddressService implements IStudentAddressService{
         return this.repository.getAll();
     }
 
-    @Override
-    public List<StudentAddress> findStudentAddressByStudentId(String studentId) {
-        return this.repository.findStudentAddressByStudentId(studentId);
-    }
+//    @Override
+//    public List<StudentAddress> findStudentAddressByStudentId(String studentId) {
+//        return this.repository.findStudentAddressByStudentId(studentId);
+//    }
 
 
 }
