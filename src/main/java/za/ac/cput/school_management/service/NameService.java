@@ -8,7 +8,7 @@
 //
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Service;
-//import za.ac.cput.school_management.domain.Name;
+//import za.ac.cput.school_management.domain.user.Name;
 //import za.ac.cput.school_management.repository.INameRepository;
 ////import za.ac.cput.school_management.repository.NameRepository;
 //

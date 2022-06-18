@@ -8,7 +8,7 @@
 //
 //import org.springframework.data.jpa.repository.JpaRepository;
 //import org.springframework.stereotype.Repository;
-//import za.ac.cput.school_management.domain.Name;
+//import za.ac.cput.school_management.domain.user.Name;
 //import java.util.List;
 //@Repository
 //public interface INameRepository extends JpaRepository<Name, Name.NameId> {

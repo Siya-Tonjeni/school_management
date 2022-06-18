@@ -1,4 +1,4 @@
-package za.ac.cput.school_management.repository;
+package za.ac.cput.school_management.repository.impl.geography;
 
 /*
 To be deleted by group lead.

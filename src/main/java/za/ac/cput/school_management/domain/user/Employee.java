@@ -4,13 +4,11 @@
  * Author: Sonwabile Gxoyiya (219267189)
  * Date: 9 June 2022
  */
-package za.ac.cput.school_management.domain;
-import za.ac.cput.school_management.domain.Name;
+package za.ac.cput.school_management.domain.user;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
 @Entity

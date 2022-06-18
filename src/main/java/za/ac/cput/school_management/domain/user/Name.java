@@ -5,14 +5,9 @@
  * Date: 15 June 2022
  */
 
-package za.ac.cput.school_management.domain;
+package za.ac.cput.school_management.domain.user;
 
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.validation.constraints.NotNull;
-import java.io.Serializable;
 import java.util.Objects;
 //@Entity
 //@IdClass(Name.NameId.class)
