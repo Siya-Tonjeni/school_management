@@ -1,3 +1,9 @@
+/**
+ * CityRepositoryTest.java
+ * test for cityRepository
+ * Author: Zintle Zothe(216130565)
+ * Date: 15 June 2022
+ */
 package za.ac.cput.school_management.repository;
 
 import org.junit.jupiter.api.MethodOrderer;
@@ -59,6 +65,21 @@ class CityRepositoryTest {
             System.out.println(repository.getAll());
         }
 
+
+
+   @Test
+    void e_findCityById(){
+        City city1= CityFactory.createCity("City-207","Cairo",CountryFactory.build("Egypt"));
+        City city2= CityFactory.createCity("City-206","Nairobi",CountryFactory.build("Kenya"));
+
+        City save = repository.save(city1);
+        City save1 = repository.save(city2);
+
+
+        List<City>  cities=repository.findCityById("City-206");
+        System.out.println(cities);
+        System.out.println("city with this id "+'\n'+cities);
+    }
 
 
     }

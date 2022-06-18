@@ -13,4 +13,7 @@ import java.util.List;
 
 public interface ICityRepository extends IRepository<City,String> {
     List<City> getAll();
+    //public List<City> getCitiesGivenACountryId (String countryId);
+    public List<City> findCityById(String cityId);
+
 }

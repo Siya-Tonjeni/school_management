@@ -9,13 +9,15 @@ package za.ac.cput.school_management.repository;
 import za.ac.cput.school_management.domain.City;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class CityRepository implements ICityRepository {
+    private final List<City> cityDB ;
+    private static CityRepository repository ;
 
-    private static CityRepository repository = null;
-    private List<City> cityDB = null;
 
     private CityRepository() {
         cityDB = new ArrayList<>();
@@ -57,4 +59,12 @@ public class CityRepository implements ICityRepository {
     public List<City> getAll () {
         return this.cityDB;
     }
+
+
+    public List<City> findCityById(String cityId) {
+        return this.cityDB.stream()
+                .filter(city -> city.getId().trim().equalsIgnoreCase(cityId.trim()))
+                .collect(Collectors.toList());
+    }
+
 }

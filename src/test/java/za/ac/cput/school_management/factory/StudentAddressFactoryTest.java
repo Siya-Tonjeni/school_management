@@ -17,7 +17,7 @@ class StudentAddressFactoryTest {
     //createCity with errors to check if it throws an exception
     public void createStudentAddressWithAnError(){
         Exception exception= assertThrows(IllegalArgumentException.class, ()->
-                StudentAddressFactory.createStudentAddress("",AddressFactory.buildAddress("","","",
+                StudentAddressFactory.createStudentAddress("",AddressFactory.buildAddress("","","","","",
                         CityFactory.createCity("","",
                                 CountryFactory.build("")))));
         String exceptionMessage = exception.getMessage();
@@ -29,7 +29,7 @@ class StudentAddressFactoryTest {
     @Test
         //shows successful createStudentAddress test results
     void createStudentAddressWithNoErrors(){
-        Address address=AddressFactory.buildAddress("41086","Shiyeka","7784",
+        Address address=AddressFactory.buildAddress("","","41086","Shiyeka","7784",
                 CityFactory.createCity("City-200","Cape Town",
                         CountryFactory.build("South Africa")));
         StudentAddress studentAddress= StudentAddressFactory.createStudentAddress("Student-1",address);

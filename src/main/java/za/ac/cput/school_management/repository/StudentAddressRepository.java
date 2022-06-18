@@ -11,11 +11,12 @@ import za.ac.cput.school_management.domain.StudentAddress;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class StudentAddressRepository implements IStudentAddressRepository {
+    private final List<StudentAddress> studentAddressDB ;
+    private static StudentAddressRepository repository ;
 
-    private static StudentAddressRepository repository = null;
-    private List<StudentAddress> studentAddressDB = null;
 
     private StudentAddressRepository() {
         studentAddressDB = new ArrayList<>();
@@ -57,6 +58,15 @@ public class StudentAddressRepository implements IStudentAddressRepository {
     public List<StudentAddress> getAll() {
         return studentAddressDB;
     }
+
+    @Override
+    public List<StudentAddress> findStudentAddressByStudentId(String studentId) {
+        return this.studentAddressDB.stream()
+                .filter(studentAddress -> studentAddress.getStudentId().trim().equalsIgnoreCase(studentId.trim()))
+                .collect(Collectors.toList());
+    }
+
+
 
 }
 
