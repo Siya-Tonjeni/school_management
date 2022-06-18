@@ -3,7 +3,7 @@
  * Repository class for Address class
  * Author: Siyamtanda Tonjeni(217107958)
  * Date: 11 June 2022
- */
+ 
 package za.ac.cput.school_management.repository;
 
 import za.ac.cput.school_management.domain.Address;
@@ -49,4 +49,4 @@ public class AddressRepository implements IAddressRepository {
     public List<Address> getAll() {
         return addressList;
     }
-}
+} */
