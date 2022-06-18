@@ -11,9 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class CountryRepositoryTest {
 
-    private Country country;
-    private Country country1;
-    private Country country2;
+    private Country country, country1, country2;
+
     private CountryRepository repository;
 
     @BeforeEach void setUp(){
