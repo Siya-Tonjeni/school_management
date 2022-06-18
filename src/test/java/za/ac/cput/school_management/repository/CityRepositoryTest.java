@@ -25,7 +25,7 @@ class CityRepositoryTest {
 
         private static ICityRepository repository=null;
     // private static CityRepository repository=CityRepository.getRepository();
-        private static City city= CityFactory.createCity("City-200","Cape Town", CountryFactory.build( "South Africa"));
+        private static City city= CityFactory.createCity("City-200","Cape Town", CountryFactory.build( "Country-200","South Africa"));
 
 
 
@@ -72,14 +72,14 @@ class CityRepositoryTest {
 
    @Test
     void e_findCityById(){
-        City city1= CityFactory.createCity("City-207","Cairo",CountryFactory.build("Egypt"));
-        City city2= CityFactory.createCity("City-206","Nairobi",CountryFactory.build("Kenya"));
+        City city1= CityFactory.createCity("City-400","Cairo",CountryFactory.build("Country-400","Egypt"));
+        City city2= CityFactory.createCity("City-500","Nairobi",CountryFactory.build("Country-500","Kenya"));
 
         City save = repository.save(city1);
         City save1 = repository.save(city2);
 
 
-        List<City>  cities=repository.findCityById("City-206");
+        List<City>  cities=repository.findCityById("City-500");
         System.out.println(cities);
         System.out.println("city with this id "+'\n'+cities);
     }

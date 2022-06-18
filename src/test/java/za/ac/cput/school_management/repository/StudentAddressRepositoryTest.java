@@ -23,11 +23,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class StudentAddressRepositoryTest {
-//    private static StudentAddressRepository repository=StudentAddressRepository.getRepository();
-     private static IStudentAddressRepository repository=null;
+   //private static StudentAddressRepository repository=StudentAddressRepository.getRepository();
+    private static IStudentAddressRepository repository=null;
     private static StudentAddress studentAddress= StudentAddressFactory.createStudentAddress("student-200", AddressFactory.buildAddress("","","41086","Osaka","7784",
             CityFactory.createCity("City-300","Tokyo",
-                    CountryFactory.build("Japan"))));
+                    CountryFactory.build("Country-300","Japan"))));
 
 
     @Test
@@ -41,7 +41,7 @@ class StudentAddressRepositoryTest {
     @Test
     void c_read() {
         StudentAddress saved=repository.save(studentAddress);
-       // Optional<StudentAddress> read= repository.read(saved.getStudentId());
+//        Optional<StudentAddress> read= repository.read(saved.getStudentId());
         Optional<StudentAddress> read= repository.findById(saved.getStudentId());
         assertAll(
                 ()-> assertTrue(read.isPresent()),
@@ -75,11 +75,11 @@ class StudentAddressRepositoryTest {
     void e_findStudentAddressByStudentId(){
         StudentAddress studentAddress1 =StudentAddressFactory.createStudentAddress("student100", AddressFactory.buildAddress("","","41086","Osaka","7784",
                 CityFactory.createCity("City-300","Tokyo",
-                        CountryFactory.build("Japan"))));
+                        CountryFactory.build("Country-300","Japan"))));
 
         StudentAddress studentAddress2 = StudentAddressFactory.createStudentAddress("student101", AddressFactory.buildAddress("","","41000","Zamalek","7700",
                 CityFactory.createCity("City-400","Cairo",
-                        CountryFactory.build("Egypt"))));
+                        CountryFactory.build("Country-400","Egypt"))));
 
         StudentAddress save = repository.save(studentAddress1);
         StudentAddress save1 = repository.save(studentAddress2);
