@@ -6,7 +6,7 @@
  */
 //package za.ac.cput.school_management.repository;
 //
-//import za.ac.cput.school_management.domain.Name;
+//import za.ac.cput.school_management.domain.user.Name;
 //
 //import java.util.ArrayList;
 //import java.util.List;

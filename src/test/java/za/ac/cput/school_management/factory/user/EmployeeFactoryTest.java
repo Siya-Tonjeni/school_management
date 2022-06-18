@@ -4,13 +4,14 @@
  * Author: Sonwabile Gxoyiya (219267189)
  * Date: 10 June 2022
  */
-package za.ac.cput.school_management.factory;
+package za.ac.cput.school_management.factory.user;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import za.ac.cput.school_management.domain.Employee;
-import za.ac.cput.school_management.domain.Name;
-import za.ac.cput.school_management.factory.NameFactory;
+import za.ac.cput.school_management.domain.user.Employee;
+import za.ac.cput.school_management.factory.user.EmployeeFactory;
+import za.ac.cput.school_management.factory.user.NameFactory;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeFactoryTest {

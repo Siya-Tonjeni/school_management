@@ -4,16 +4,16 @@
  * Author: Sonwabile Gxoyiya (219267189)
  * Date: 16 June 2022
  */
-package za.ac.cput.school_management.service;
+package za.ac.cput.school_management.service.user;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import za.ac.cput.school_management.domain.Employee;
-import za.ac.cput.school_management.domain.Name;
-import za.ac.cput.school_management.factory.EmployeeFactory;
-import za.ac.cput.school_management.factory.NameFactory;
+import za.ac.cput.school_management.domain.user.Employee;
+import za.ac.cput.school_management.factory.user.EmployeeFactory;
+import za.ac.cput.school_management.factory.user.NameFactory;
+import za.ac.cput.school_management.service.impl.user.EmployeeService;
 
 import java.util.List;
 import java.util.Optional;

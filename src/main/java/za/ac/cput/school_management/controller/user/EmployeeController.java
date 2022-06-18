@@ -4,18 +4,17 @@
  * Author: Sonwabile Gxoyiya (219267189)
  * Date: 16 June 2022
  */
-package za.ac.cput.school_management.controller;
+package za.ac.cput.school_management.controller.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import za.ac.cput.school_management.domain.Employee;
-import za.ac.cput.school_management.service.EmployeeService;
+import za.ac.cput.school_management.domain.user.Employee;
+import za.ac.cput.school_management.service.impl.user.EmployeeService;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("school-management/employee/")

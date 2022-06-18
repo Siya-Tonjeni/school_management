@@ -8,8 +8,8 @@
 //
 //import org.junit.jupiter.api.Test;
 //import org.springframework.boot.test.context.SpringBootTest;
-//import za.ac.cput.school_management.domain.Name;
-//import za.ac.cput.school_management.factory.NameFactory;
+//import za.ac.cput.school_management.domain.user.Name;
+//import za.ac.cput.school_management.factory.user.NameFactory;
 ////import za.ac.cput.school_management.repository.NameRepository;
 //
 //import static org.junit.jupiter.api.Assertions.*;

@@ -5,23 +5,20 @@
  * Date: 16 June 2022
  */
 
-package za.ac.cput.school_management.service;
+package za.ac.cput.school_management.service.impl.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import za.ac.cput.school_management.domain.Employee;
-import za.ac.cput.school_management.domain.Name;
+import za.ac.cput.school_management.domain.user.Employee;
 //import za.ac.cput.school_management.repository.EmployeeRepository;
-import za.ac.cput.school_management.factory.EmployeeFactory;
-import za.ac.cput.school_management.factory.NameFactory;
-import za.ac.cput.school_management.repository.IEmployeeRepository;
+import za.ac.cput.school_management.repository.impl.user.IEmployeeRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EmployeeService implements IEmployeeService{
+public class EmployeeService implements IEmployeeService {
 
 
     private IEmployeeRepository repository;

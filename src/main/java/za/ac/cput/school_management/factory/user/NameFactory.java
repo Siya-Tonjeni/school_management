@@ -5,8 +5,8 @@
  * Date: 9 June 2022
  */
 
-package za.ac.cput.school_management.factory;
-import za.ac.cput.school_management.domain.Name;
+package za.ac.cput.school_management.factory.user;
+import za.ac.cput.school_management.domain.user.Name;
 import za.ac.cput.school_management.util.helper;
 
 public class NameFactory {
