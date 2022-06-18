@@ -2,12 +2,13 @@
 //
 //import za.ac.cput.school_management.domain.user.Employee;
 //import za.ac.cput.school_management.domain.user.Name;
+//import za.ac.cput.school_management.repository.user.IEmployeeRepository;
 //
 //import java.util.ArrayList;
 //import java.util.List;
 //import java.util.Optional;
 //
-//public class EmployeeRepository implements IEmployeeRepository{
+//public class EmployeeRepository implements IEmployeeRepository {
 //
 //    public static EmployeeRepository repository = null;
 //
@@ -24,7 +25,7 @@
 //        return repository;
 //    }
 //
-//    @Override
+//
 //    public Employee save(Employee employee){
 //        Employee readEmployee = (read(employee.getStaffId()));
 //        if (readEmployee != null){
@@ -34,7 +35,7 @@
 //        this.employeeDB.add(employee);
 //        return employee;
 //    }
-//    @Override
+//
 //    public Employee read(String staffId) {
 //        Employee readEmployee = employeeDB.stream().filter(emp -> emp.getStaffId()
 //                        .equals(staffId))
@@ -45,7 +46,7 @@
 //    }
 //
 //
-//    @Override
+//
 //    public Employee delete(Employee employee){
 //        Employee deleteEmployee = read(employee.getStaffId());
 //        if(deleteEmployee != null){
@@ -54,9 +55,13 @@
 //        return null;
 //    }
 //
-//    @Override
+//
 //    public List<Employee> getAll(){
 //        return employeeDB;
 //    }
 //
+//    @Override
+//    public List<Employee> findAll() {
+//        return null;
+//    }
 //}
