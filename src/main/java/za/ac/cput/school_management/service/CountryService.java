@@ -6,7 +6,10 @@ import za.ac.cput.school_management.repository.CountryRepository;
 import java.util.List;
 import java.util.Optional;
 
+
+
 public class CountryService  implements ICountryService{
+
     private static CountryService countryService;
     private CountryRepository repository ;
 
@@ -24,8 +27,8 @@ public class CountryService  implements ICountryService{
         return this.repository.save(country);
     }
 
-    public Optional<Country>read(String name){
-        return this.repository.read(name);
+    public Optional<Country>read(String id){
+        return this.repository.read(id);
     }
 
     public void delete(Country country){

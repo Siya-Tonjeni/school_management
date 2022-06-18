@@ -11,8 +11,8 @@ import za.ac.cput.school_management.util.helper;
 public class CountryFactory {
     public static Country build( String id, String name){
 
-//        helper.checkStringParam("id", id);
-//        helper.checkStringParam("name", name);
+//        if ( id == null ||id.isEmpty()  )
+//            throw new IllegalArgumentException("id or country name is missing !");
 
         //String id = helper.generateUUID();
 
