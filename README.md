@@ -13,13 +13,14 @@
 For the Name Entity if there was a need to add a field or change the field type it means the data needs to be changed in the two classes Employee and Student.
 
 
-#### Siyamtanda Tonjeni -
+#### Siyamtanda Tonjeni - Address
+The address entity would have been better if it was embedded for a slightly better performance. This would create less storage and its a guarante that you will never have multiple addresses for a single user. 
 
 
-#### Siyamtanda Tonjeni -
+#### Hlombekazi Mbelu -
 
 
-#### Siyamtanda Tonjeni -
+#### Zintle Zothe -
 
 
 #### Nikiwe Mkontshwana -
