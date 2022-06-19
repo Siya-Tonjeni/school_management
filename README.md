@@ -23,6 +23,7 @@ For the Name Entity if there was a need to add a field or change the field type 
 
 
 #### Nikiwe Mkontshwana -
+ Security to be added so that the code may not be vulnerable
 
 
 #### Abongile Tshopi -

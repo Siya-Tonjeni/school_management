@@ -6,25 +6,24 @@ Student: Nikiwe Mkontshwana
 Student Number: 214236714
 Date: 17 June 2022
 */
-/*package za.ac.cput.school_management.service;
+package za.ac.cput.school_management.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import za.ac.cput.school_management.repository.IEmployeeRepository;
-import za.ac.cput.school_management.service.EmployeeAddressService.IEmploymentAddressService;
+import za.ac.cput.school_management.repository.IEmployeeAddressRepository;
 import za.ac.cput.school_management.domain.EmployeeAddress;
 
 import java.util.List;
 import java.util.Optional;
 @Service
 public class EmployeeAddressService implements IEmployeeAddressService{
-    private IEmployeeAddressRepository repository;
+    private IEmployeeAddressRepository repository = null;
 
-    public EmployeeAddressService(IEmployeeAddressRepository repository)
-    {
-        this.repository = repository;
-    }
+@Autowired private EmployeeAddressService(IEmployeeAddressRepository employeeAddressRepository) {
+    this.repository = employeeAddressRepository;
+}
 
-    @Override
+@Override
     public EmployeeAddress save(EmployeeAddress employeeAddress) throws IllegalArgumentException
     {
         return repository.save(employeeAddress);
@@ -37,10 +36,11 @@ public class EmployeeAddressService implements IEmployeeAddressService{
     }
 
     @Override
-    public List<EmployeeAddress> findAll()
+    public List<EmployeeAddress> getAll(String staffId)
     {
-        return repository.findAll();
+        return this.repository.findAll();
     }
+
 
     @Override
     public void deleteById(String staffId)
@@ -50,13 +50,13 @@ public class EmployeeAddressService implements IEmployeeAddressService{
     }
 
     @Override
-    public void delete(EmployeeAddress object)
+    public void delete(EmployeeAddress employeeAddress)
     {
-        repository.delete(object);
+        this.repository.delete(employeeAddress);
     }
 
 }
-*/
+
 
 
 

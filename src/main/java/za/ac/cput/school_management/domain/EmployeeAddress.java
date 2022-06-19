@@ -9,6 +9,8 @@
 
 package za.ac.cput.school_management.domain;
 
+import za.ac.cput.school_management.domain.geography.Address;
+
 public class EmployeeAddress {
 
     private String staffId;
